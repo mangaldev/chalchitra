@@ -63,8 +63,15 @@ module.exports = function(app, passport, auth) {
     var index = require('../app/controllers/index');
     app.get('/', index.render);
     
+
+
     //Movie route
     var movies = require('../app/controllers/movies');
-    app.get('/search', movies.all);
+
+
+    //Finish with setting up the articleId param
+    app.param('searchString', movies.movie);
     
+    app.get('/search', movies.all);
+    app.get('/search/:searchString', movies.show);
 };

@@ -1,13 +1,13 @@
 <section data-ng-controller="SearchController" data-ng-init="find()">
-
+ <form ng-submit="search()" method="GET">
 	<input type="input" ng-model="moviename" placeholder="Enter Movie Name" ></input>
-	<button class="btn" ng-click="search()">Search</button>
-
+	<button class="btn" type="submit">Search</button>
 	<ul class="unstyled">
 		<li data-ng-repeat="movie in movies">
-			<span>{{movie.title}}</span> 
+			<span>{{movie.titles}}</span> 
 			<span>{{movie.actors}}</span> 
 			<span>{{movie.directors}}</span> 
 		</li>
 	</ul>
+	</form>
 </section>
