@@ -1,8 +1,8 @@
 module.exports = {
-    db: "mongodb://localhost/mean-test",
+    db: "mongodb://localhost/imdb-test",
     port: 3001,
     app: {
-        name: "MEAN - A Modern Stack - Test"
+        name: "Chalchitra"
     },
     facebook: {
         clientID: "APP_ID",
