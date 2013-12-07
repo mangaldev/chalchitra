@@ -15,17 +15,4 @@ var MovieSchema = new Schema({
     directors: String
 });
 
-/*
-var MovieSchema = new Schema({
-    title: String,
-    actors: String,
-    directors: String,
-    producedBy: String,
-    musicBy: String,
-    language: String,
-    comments: [{body: String, date: Date}],
-    releasedDate: {type: Date, default: Date.now},
-    country: String
-});
-*/
 mongoose.model('Movie', MovieSchema);

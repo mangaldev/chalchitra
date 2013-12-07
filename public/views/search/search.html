@@ -1,15 +1,13 @@
 <section data-ng-controller="SearchController" data-ng-init="find()">
-    
-    <input type="input" ng-model="moviename" placeholder="Enter Movie Name" ></input>
-	<button class="btn" ng-click="search()">Search</button>
-	<div><h3>Testing : {{moviename}}</h3></div>
-    <div><h3>Result : {{movies}}</h3></div>
 
-	<ul class="articles unstyled">
+	<input type="input" ng-model="moviename" placeholder="Enter Movie Name" ></input>
+	<button class="btn" ng-click="search()">Search</button>
+
+	<ul class="unstyled">
 		<li data-ng-repeat="movie in movies">
 			<span>{{movie.title}}</span> 
-            <span>{{movie.actors}}</span> 
-            <span>{{movie.directors}}</span> 
+			<span>{{movie.actors}}</span> 
+			<span>{{movie.directors}}</span> 
 		</li>
 	</ul>
 </section>
