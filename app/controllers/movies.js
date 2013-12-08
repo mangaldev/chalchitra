@@ -7,12 +7,21 @@ var mongoose = require('mongoose'),
     _ = require('underscore');
 
 
+var textSearchOptions = {
+    project: 'titles'                // do not include the `created` property
+  // , filter: { likes: { $gt: 1000000 }} // casts queries based on schema
+  // , limit: 10
+  // , language: 'spanish'
+  // , lean: true
+}
+
+
 /**
  * Find movie by id
  */
 exports.movie = function(req, res,next,id) {
     console.log("In exports.movie...Got id : "+id);
-    Movie.textSearch(id,function(err, movies) {
+    Movie.textSearch(id,textSearchOptions,function(err, movies) {
         if (err) {
             res.render('error', {
                 status: 500
@@ -23,7 +32,6 @@ exports.movie = function(req, res,next,id) {
                 console.log(movies.results[i].obj);
                 resultArray[i] = movies.results[i].obj;
             };
-            // res.jsonp(resultArray);
             req.movies = resultArray;
         }
         next();
