@@ -3,6 +3,50 @@
     margin-left:0
 }
 
+.searchtxt_rd {
+height: 26px;
+width: 547px;
+background: transparent;
+padding: 4px;
+font-size: 13px;
+outline: 0;
+margin: 0;
+border: 0;
+}
+
+.searchbox_rd {
+border: 1px solid #777;
+box-shadow: inset 0 0 .7em rgba(0,0,0,0.25);
+display: block;
+width: 600px;
+}
+
+.searchbtn_rd {
+width: 40px;
+float: right;
+height: 34px;
+display: inline-block;
+border: 0;
+padding: 4px 10px 4px;
+margin-bottom: 0;
+font-size: 13px;
+line-height: 18px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #c13030;
+background-image: -webkit-linear-gradient(top,#e56557,#c13030);
+background-image: -moz-linear-gradient(top,#e56557,#c13030);
+background-image: -ms-linear-gradient(top,#e56557,#c13030);
+background-image: -o-linear-gradient(top,#e56557,#c13030);
+background-image: linear-gradient(top,#e56557,#c13030);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f2f2f2',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+border-left: 1px solid #ccc;
+}
 
 .content {
     margin-top:50px;
