@@ -1,4 +1,10 @@
-angular.module('mean.system').controller('HeaderController', ['$scope', 'Global', function ($scope, Global) {
-    $scope.global = Global;    
-    $scope.isCollapsed = false;
-}]);
+angular.module('mean.system').controller('HeaderController', 
+	['$scope', 'Global','$location', 
+	function ($scope, Global,$location) {
+		$scope.global = Global;    
+		$scope.isCollapsed = false;
+		$scope.moviename = '';
+		$scope.search = function() {
+			$location.path('search/' + $scope.moviename);
+		};
+	}]);

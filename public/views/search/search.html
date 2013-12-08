@@ -1,9 +1,5 @@
 <section data-ng-controller="SearchController" data-ng-init="find()">
  <form class="searchbox_rd" ng-submit="search()" method="GET">
-	<input type="input" ng-model="moviename" class="searchtxt_rd" placeholder="Enter Movie Name" ></input>
-	<button class="searchbtn_rd" type="submit">
-	<img width="16" height="16" class="retina" src="/img/icons/icon_search.png">
-	</button>
 	<ul class="unstyled">
 		<li data-ng-repeat="movie in movies">
 			<span>{{movie.titles}}</span> 
