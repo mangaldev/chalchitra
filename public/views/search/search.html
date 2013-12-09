@@ -1,11 +1,15 @@
-<section data-ng-controller="SearchController" data-ng-init="find()">
- <form class="searchbox_rd" ng-submit="search()" method="GET">
-	<ul class="unstyled">
-		<li data-ng-repeat="movie in movies">
-			<span>{{movie.titles}}</span> 
-			<span>{{movie.actors}}</span> 
-			<span>{{movie.directors}}</span> 
-		</li>
-	</ul>
-	</form>
+<section data-ng-controller="SearchController">
+	<div class="row">
+		<div class="col-lg-6">
+			<h2><small>Results for </small>"{{searchString}}"</h2>
+			<h4>Movies</h4>
+	        <table class="table table-striped table-hover">
+	            <tbody>
+	                <tr data-ng-repeat="movie in movies">
+	                    <td><a href="movies/{{movie._id}}">{{movie.titles}}</a></td> 
+	                </tr>
+	            </tbody>
+	        </table>
+    	</div>
+    </div>
 </section>

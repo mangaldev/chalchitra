@@ -1,11 +1,11 @@
 <section data-ng-controller="HeaderController" data-ng-init="find()">
     <div class="row">
-        <ul class="unstyled">
-            <li data-ng-repeat="movie in movies">
-                <span>{{movie.titles}}</span> 
-                <span>{{movie.actors}}</span> 
-                <span>{{movie.directors}}</span> 
-            </li>
-        </ul>
+        <table class="table table-striped table-hover">
+            <tbody>
+                <tr data-ng-repeat="movie in movies">
+                    <td>{{movie.titles}}</td> 
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
