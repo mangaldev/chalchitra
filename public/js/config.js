@@ -5,11 +5,11 @@ angular.module('mean').config(['$routeProvider',
         when('/', {
             templateUrl: 'views/index.html'
         }).
-         when('/search/:query', {
-            templateUrl: 'views/search/search.html'
+        when('/search/:query', {
+            templateUrl: 'views/search.html'
         }).
-        when('/movies/:movieId', {
-            templateUrl: 'views/movies.html'
+        when('/movie/:movieId', {
+            templateUrl: 'views/movie.html'
         }).
         otherwise({
             redirectTo: '/'
