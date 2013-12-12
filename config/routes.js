@@ -72,9 +72,9 @@ module.exports = function(app, passport, auth) {
 
     //Finish with setting up the articleId param
     app.param('searchString', movies.findMoviesByTextSearch);
-    app.param('moviesId', movies.findMovieById);
+    app.param('movieId', movies.findMovieById);
     
     //app.get('/search', movies.all);
     app.get('/search/:searchString', movies.show);
-    app.get('/movies/:moviesId', movies.show);
+    app.get('/movie/:movieId', movies.show);
 };
