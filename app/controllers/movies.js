@@ -17,14 +17,18 @@
 /**
  * Find movie by id
  */
-exports.findMovieById = function(req, res, next, id) {
+ exports.findMovieById = function(req, res, next, id) {
+    console.log("Searching movie by id "+id);
     Movie.load(id, function(err, movie) {
-        if (err) return next(err);
-        if (!movie) return next(new Error('Failed to load movie ' + id));
-        console.log("Result returned from findMovieById === "+movie);
-        req.movie = movie;
-        next();
-    });
+        if (err) { 
+            console.log("Error in finding by id");
+            return next(err);
+        }
+            if (!movie) return next(new Error('Failed to load movie ' + id));
+            console.log("Result returned from findMovieById === "+movie);
+            req.movie = movie;
+            next();
+        });
 };
 
 /**
@@ -70,7 +74,7 @@ exports.findMovieById = function(req, res, next, id) {
  * Show a movie
  */
  exports.show = function(req, res) {
-    console.log("Executing show command");
+    console.log("Executing show command"+ req.movie);
     res.jsonp(req.movie);
 };
 

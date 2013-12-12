@@ -1,11 +1,11 @@
 angular.module('mean.search')
 .controller('MovieController', 
-	['$scope', '$routeParams', '$location','Movies',
-	function ($scope, $routeParams, $location,Movies) {
+	['$scope', '$routeParams', '$location','Movie',
+	function ($scope, $routeParams, $location,Movie) {
 		var movieId =  $routeParams.movieId ;
-		console.log("Searching in database for moviename"+movieId);
-		Movies.get({movieId:movieId},function(movie) {
-			console.log("Got result back after querying : " + movie);
-			$scope.movie = movie;
+		console.log("Got the movie id to show "+movieId);
+		Movie.get({movieId:movieId},function(movies) {
+			console.log("Got result back after querying : "+movies);
+			$scope.movie = movies;
 		});
 	}]);
