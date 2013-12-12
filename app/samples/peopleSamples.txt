@@ -1,0 +1,71 @@
+db.peoples.insert({
+	_id: ("aamirkhanid"),
+	name:"Aamir Khan",
+	born: "1965-03-14",
+	asActor:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asProducer:[],
+	asSinger:[],
+	asDirector:[],
+	asMusicDirector:[],
+	asWriter:[],
+});
+
+db.peoples.insert({
+	_id: ("abhishekBachid"),
+	name:"Abhishek Bachhan",
+	born: "1965-03-14",
+	asActor:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asProducer:[],
+	asSinger:[],
+	asDirector:[],
+	asMusicDirector:[],
+	asWriter:[],
+});
+
+db.peoples.insert({
+	_id: ("katrinaid"),
+	name:"Katrina Kaif",
+	born: "1965-03-14",
+	asActor:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asProducer:[],
+	asSinger:[],
+	asDirector:[],
+	asMusicDirector:[],
+	asWriter:[],
+});
+
+db.peoples.insert({
+	_id: ("vijaykrishnaid"),
+	name:"Vijay Krishna Acharya",
+	born: "1965-03-14",
+	asActor:[],
+	asProducer:[],
+	asSinger:[],
+	asDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asMusicDirector:[],
+	asWriter:[],
+});
+
+db.peoples.insert({
+	_id: ("adityachopraid"),
+	name:"Aditya Chopra",
+	born: "1965-03-14",
+	asActor:[],
+	asProducer:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asSinger:[],
+	asDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asMusicDirector:[],
+	asWriter:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+});
+
+db.peoples.insert({
+	_id: ("pritamId"),
+	name:"Pritam",
+	born: "1965-03-14",
+	asActor:[],
+	asProducer:[],
+	asSinger:[],
+	asDirector:[],
+	asMusicDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	asWriter:[],
+});

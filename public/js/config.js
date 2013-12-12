@@ -8,6 +8,9 @@ angular.module('mean').config(['$routeProvider',
          when('/search/:query', {
             templateUrl: 'views/search/search.html'
         }).
+        when('/movies/:movieId', {
+            templateUrl: 'views/movies.html'
+        }).
         otherwise({
             redirectTo: '/'
         });

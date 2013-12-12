@@ -1,0 +1,13 @@
+ db.songs.insert({
+    _id: ("dhoomdhoomid"),
+    title: "Dhoom Dhoom karna hai kar le",
+    movie: {name: "Dhoom 3",reference: ("dhoom3id")},
+    singers: [],
+    musicDirectors: [{referecne: ("pritamId"), name:"Pritam"}],
+    writers: [{referecne: ("pritamId"), name:"Pritam"}],
+    genre:["Action","Romantic"],
+    releaseDate:"2013-012-20",
+    language:["Hindi"],
+    country:"India",
+    rating:5
+});

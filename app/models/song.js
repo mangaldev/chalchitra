@@ -8,23 +8,18 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Movie Schema
+ * Song Schema
  */
-var MovieSchema = new Schema({
+var SongSchema = new Schema({
     _id: String,
     title: {
         type: String
     },
-    actors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
+    movie: {
         name: {type: String},
-        knownAs: {type: String}
-    }],
-    directors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
-    }],
-    producers: [{
+        reference: { type: Schema.ObjectId,ref:'Movie' }
+    },
+    singers: [{
         reference: { type: Schema.ObjectId,ref:'People' },
         name: {type: String}
     }],
@@ -33,10 +28,6 @@ var MovieSchema = new Schema({
         name: {type: String}
     }],
     writers: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
-    }],
-    editors: [{
         reference: { type: Schema.ObjectId,ref:'People' },
         name: {type: String}
     }],
@@ -52,17 +43,16 @@ var MovieSchema = new Schema({
     country:{
         type: String
     },
-    songs: [{
-        reference: { type: Schema.ObjectId,ref:'Song' },
-        title: {type: String}
-    }],
+    rating:{
+        type: Number
+    }
 });
 
 
 /**
  * Statics
  */
-MovieSchema.statics = {
+SongSchema.statics = {
     load: function(id, cb) {
         console.log("calling with id "+id);
         this.findOne({
@@ -72,7 +62,6 @@ MovieSchema.statics = {
 };
 
 
-MovieSchema.plugin(textSearch);
+SongSchema.plugin(textSearch);
 
-
-mongoose.model('Movie', MovieSchema);
+mongoose.model('Song', SongSchema);

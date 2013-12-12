@@ -7,16 +7,37 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /**
- * Movie Schema
+ * People Schema
  */
 var PeopleSchema = new Schema({
-    name: String,
-    movies: {
-        type: Schema.Types.ObjectId,
-        ref: 'Movie'
-    }
+    _id: String,
+    name: {type: String},
+    born: {type: Date},
+    asActor:[{
+    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	name: String
+    }],
+    asProducer:[{
+    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	name: String
+    }],
+    asSinger:[{
+    	reference: { type: Schema.ObjectId, ref: 'Song'},
+    	name: String
+    }],
+    asDirector:[{
+    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	name: String
+    }],
+    asMusicDirector:[{
+    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	name: String
+    }],
+    asWriter:[{
+    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	name: String
+    }]
 });
-
 
 PeopleSchema.plugin(textSearch);
 

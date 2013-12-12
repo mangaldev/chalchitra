@@ -1,25 +1,36 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-    Movie = mongoose.model('Movie'),
-    textSearch = require('mongoose-text-search'),
-    _ = require('underscore');
+ var mongoose = require('mongoose'),
+ Movie = mongoose.model('Movie'),
+ textSearch = require('mongoose-text-search'),
+ _ = require('underscore');
 
 
-var textSearchOptions = {
-    project: 'titles'                // do not include the `created` property
+ var textSearchOptions = {
+    project: 'title'                // do not include the `created` property
   // , filter: { likes: { $gt: 1000000 }} // casts queries based on schema
   // , limit: 10
   // , language: 'spanish'
   // , lean: true
 }
-
-
 /**
  * Find movie by id
  */
-exports.movie = function(req, res,next,id) {
+exports.findMovieById = function(req, res, next, id) {
+    Movie.load(id, function(err, movie) {
+        if (err) return next(err);
+        if (!movie) return next(new Error('Failed to load movie ' + id));
+        console.log("Result returned from findMovieById === "+movie);
+        req.movie = movie;
+        next();
+    });
+};
+
+/**
+ * Find movies by using Text Search
+ */ 
+ exports.findMoviesByTextSearch = function(req, res,next,id) {
     console.log("In exports.movie...Got id : "+id);
     Movie.textSearch(id,textSearchOptions,function(err, movies) {
         if (err) {
@@ -32,7 +43,7 @@ exports.movie = function(req, res,next,id) {
                 console.log(movies.results[i].obj);
                 resultArray[i] = movies.results[i].obj;
             };
-            req.movies = resultArray;
+            req.movie = resultArray;
         }
         next();
     });
@@ -41,7 +52,7 @@ exports.movie = function(req, res,next,id) {
 /**
  * List of Movies
  */
-exports.all = function(req, res) {
+ exports.all = function(req, res) {
     console.log("Executing find command");
     Movie.find().exec(function(err, movies) {
         if (err) {
@@ -58,7 +69,11 @@ exports.all = function(req, res) {
 /**
  * Show a movie
  */
-exports.show = function(req, res) {
+ exports.show = function(req, res) {
     console.log("Executing show command");
-    res.jsonp(req.movies);
+    res.jsonp(req.movie);
+};
+
+exports.insert = function(req,res){
+    console.log("");
 };
