@@ -16,3 +16,6 @@ db.movies.insert({
 	country: "India",
 	songs: [{referecne: ("dhoomdhoomid"), title:"Dhoom Dhoom karna hai kar le"}],
 });
+
+
+db.movies.ensureIndex( { title: "text" } )
