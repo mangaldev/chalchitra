@@ -56,6 +56,7 @@ var MovieSchema = new Schema({
         reference: { type: Schema.ObjectId,ref:'Song' },
         title: {type: String}
     }],
+    bio: String
 });
 
 
