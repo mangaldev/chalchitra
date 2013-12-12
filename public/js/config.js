@@ -8,7 +8,7 @@ angular.module('mean').config(['$routeProvider',
         when('/search/:query', {
             templateUrl: 'views/search.html'
         }).
-        when('/movies/:movieId', {
+        when('/movie/:movieId', {
             templateUrl: 'views/movie.html'
         }).
         otherwise({
