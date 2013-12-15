@@ -36,7 +36,8 @@ var PeopleSchema = new Schema({
     asWriter:[{
     	_id: String,
     	name: String
-    }]
+    }],
+    bio: String
 });
 
 PeopleSchema.plugin(textSearch);

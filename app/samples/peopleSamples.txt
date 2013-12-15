@@ -10,6 +10,7 @@ db.peoples.insert({
 	asDirector:[],
 	asMusicDirector:[],
 	asWriter:[],
+	bio: "Aamir Hussain Khan was born on 14 March 1965 in Mumbai. His father, Tahir Hussain, was a film producer while his uncle, Nasir Hussain, was a film producer as well as a director and an actor. "
 });
 
 db.peoples.insert({
@@ -22,6 +23,7 @@ db.peoples.insert({
 	asDirector:[],
 	asMusicDirector:[],
 	asWriter:[],
+	bio: "Abhishek Bachchan is an Indian film actor, producer, playback singer and television host. Bachchan has received three Filmfare Awards for acting, a National Award as producer and was named as one of the highest paid actors in Bollywood in 2010."
 });
 
 db.peoples.insert({
@@ -34,6 +36,7 @@ db.peoples.insert({
 	asDirector:[],
 	asMusicDirector:[],
 	asWriter:[],
+	bio: "Katrina Kaif is a British Indian film actress and model. She is primarily known for her work in Bollywood films, though has also appeared in Telugu and Malayalam films."
 });
 
 db.peoples.insert({
@@ -46,6 +49,7 @@ db.peoples.insert({
 	asDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
 	asMusicDirector:[],
 	asWriter:[],
+	bio: "He has done his schooling from Seth Anandram Jaipuria School, Kanpur.He is an English 	Literature graduate from Kirori Mal College, Delhi. In 1992, he came to Mumbai. His first assignment in Bollywood was to assistKundan Shah on Kabhi Haan Kabhi Naa. He also loves the works of Quentin Tarantino, Woody Allen and Patrice Leconte."
 });
 
 db.peoples.insert({
@@ -58,6 +62,7 @@ db.peoples.insert({
 	asDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
 	asMusicDirector:[],
 	asWriter:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
+	bio: "Aditya Chopra is a three-time National Award winning Indian film producer, screenwriter, director and distributor. His work as a director includes Dilwale Dulhania Le Jayenge, Mohabbatein, and Rab Ne Bana Di Jodi."
 });
 
 db.peoples.insert({
@@ -70,4 +75,5 @@ db.peoples.insert({
 	asDirector:[],
 	asMusicDirector:[{reference : ("dhoom3id"), name: "Dhoom 3"}],
 	asWriter:[],
+	bio: "Pritam Chakraborty better known as Pritam, is a music director and composer from Kolkata who currently composes music for Bollywood."
 });
