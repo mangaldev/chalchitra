@@ -7,7 +7,65 @@
             <h2>{{movie.title}}</h2>
             <hr/>
             <p>{{movie.bio}}</p>
-
+            <table>
+                <tr>
+                    <th>Directors: </th>
+                    <td >
+                        <span data-ng-repeat="director in movie.directors">
+                            <a href="../#!/people/{{director._id}}">{{director.name}}</a>
+                            <span ng-show=" ! $last ">,</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Producers: </th>
+                    <td >
+                        <span data-ng-repeat="producer in movie.producers">
+                            <a href="../#!/people/{{producer._id}}">{{producer.name}}</a>
+                            <span ng-show=" ! $last ">,</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Actors: </th>
+                    <td >
+                        <span data-ng-repeat="actor in movie.actors.slice(0, 4)">
+                            <a href="../#!/people/{{actor._id}}">{{actor.name}}</a>
+                            <span ng-show=" ! $last ">,</span>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <h4>Songs</h4>
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr data-ng-repeat="song in movie.songs">
+                        <td>{{song.title}}</td> 
+                        <td>
+                            <span data-ng-repeat="singer in song.singers">
+                            <a href="../#!/people/{{singer._id}}">{{singer.name}}</a>
+                            <span ng-show=" ! $last ">, </span>
+                        </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <h4>Cast</h4>
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr data-ng-repeat="actor in movie.actors">
+                        <td>{{actor.name}} as {{actor.knownAs}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
