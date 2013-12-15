@@ -1,0 +1,18 @@
+<section data-ng-controller="PeopleController">
+    <div class="row">
+        <div class="col-lg-2" style="margin-top: 20px">
+            <img src="../img/movies/2013/large/Dhoom_3_Film_Poster.jpg" alt="Dhoom 3" class="img-thumbnail">
+        </div>
+        <div class="col-lg-6">
+            <h2>{{people.name}}</h2>
+            <hr/>
+            <p>{{people.bio}}</p>
+            <table>
+                <tr>
+                    <th>Born: </th>
+                    <td>{{people.born | date:'d MMMM, y'}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

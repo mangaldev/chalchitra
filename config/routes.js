@@ -63,23 +63,22 @@ module.exports = function(app, passport, auth) {
     var index = require('../app/controllers/index');
     app.get('/', index.render);
     app.get('/search', index.render);
-        
-
+    app.get('/people', index.render); 
 
     //Movie route
     var movies = require('../app/controllers/movies');
     var ratings = require('../app/controllers/ratings');
+    var peoples = require('../app/controllers/peoples');
 
 
     //Finish with setting up the articleId param
     app.param('searchString', movies.findMoviesByTextSearch);
     app.param('movieId', movies.findMovieById);
+    app.param('peopleId', peoples.findPeopleById);
 
 
-    
-    //app.get('/search', movies.all);
     app.get('/search/:searchString', movies.show);
     app.get('/movie/:movieId', movies.show);
-
     app.get('/rating/:userName/:movie', ratings.findUserRatingByMovie);
+    app.get('/people/:peopleId', peoples.show);
 };
