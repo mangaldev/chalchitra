@@ -46,7 +46,9 @@ var MovieSchema = new Schema({
         _id: String,
         title: String
     }],
-    bio: String
+    bio: String,
+    userRating: Number,
+    totalUsersRated: Number
 });
 
 

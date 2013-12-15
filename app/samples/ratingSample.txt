@@ -1,0 +1,16 @@
+db.ratings.drop()
+
+db.ratings.insert({
+	_id: "rating1",
+	userId: "mdev",
+	moviedId: "dhoom3id",
+	rating: 5
+})
+
+
+db.ratings.insert({
+	_id: "rating2",
+	userId: "mdev",
+	moviedId: "don2id",
+	rating: 5
+})
