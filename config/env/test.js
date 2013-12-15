@@ -2,7 +2,7 @@ module.exports = {
     db: "mongodb://localhost/imdb-test",
     port: 3001,
     app: {
-        name: "Chalchitra"
+        name: "Movie Beans"
     },
     facebook: {
         clientID: "APP_ID",

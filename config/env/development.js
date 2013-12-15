@@ -1,7 +1,7 @@
 module.exports = {
     db: "mongodb://localhost/imdb-dev",
     app: {
-        name: "Chalchitra"
+        name: "Movie Beans"
     },
     facebook: {
         clientID: "APP_ID",
