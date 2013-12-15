@@ -40,6 +40,16 @@ var PeopleSchema = new Schema({
     bio: String
 });
 
+PeopleSchema.statics = {
+    load: function(id, cb) {
+        console.log("calling with id "+id);
+        this.findOne({
+            _id: id
+        }).exec(cb);//.populate('actors', 'name')
+    }
+};
+
+
 PeopleSchema.plugin(textSearch);
 
 mongoose.model('People', PeopleSchema);

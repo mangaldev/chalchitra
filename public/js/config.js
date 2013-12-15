@@ -13,8 +13,8 @@ angular.module('mean')
         when('/movie/:movieId', {
             templateUrl: 'views/movie.html'
         }).
-        when('/rating', {
-            templateUrl: 'views/rating.html'
+        when('/people/:peopleId', {
+            templateUrl: 'views/people.html'
         }).
         otherwise({
             redirectTo: '/'

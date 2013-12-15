@@ -77,3 +77,5 @@ db.peoples.insert({
 	asWriter:[],
 	bio: "Pritam Chakraborty better known as Pritam, is a music director and composer from Kolkata who currently composes music for Bollywood."
 });
+
+db.peoples.ensureIndex( { name: "text" } )

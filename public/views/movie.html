@@ -14,12 +14,15 @@
                 </script> 
                 <b>Your rating:</b> <rating value="movie.userRating" max="10" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>  {{movie.userRating}} / 10
             </div>
+            <div>
+                Ratings: {{movie.rating}}/10 from {{movie.totalUsersRated}} users
+            </div>
             <hr/>
             <p>{{movie.bio}}</p>
             <table>
                 <tr>
                     <th>Directors: </th>
-                    <td >
+                    <td>
                         <span data-ng-repeat="director in movie.directors">
                             <a href="../#!/people/{{director._id}}">{{director.name}}</a>
                             <span ng-show=" ! $last ">,</span>
@@ -28,7 +31,7 @@
                 </tr>
                 <tr>
                     <th>Producers: </th>
-                    <td >
+                    <td>
                         <span data-ng-repeat="producer in movie.producers">
                             <a href="../#!/people/{{producer._id}}">{{producer.name}}</a>
                             <span ng-show=" ! $last ">,</span>
@@ -37,7 +40,7 @@
                 </tr>
                 <tr>
                     <th>Actors: </th>
-                    <td >
+                    <td>
                         <span data-ng-repeat="actor in movie.actors.slice(0, 4)">
                             <a href="../#!/people/{{actor._id}}">{{actor.name}}</a>
                             <span ng-show=" ! $last ">,</span>
