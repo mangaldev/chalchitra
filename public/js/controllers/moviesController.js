@@ -7,5 +7,6 @@ angular.module('mean.search')
 		Movie.get({movieId:movieId},function(movies) {
 			console.log("Got result back after querying : "+movies);
 			$scope.movie = movies;
+            $scope.movie.userRating = "3";
 		});
 	}]);
