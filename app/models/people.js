@@ -11,30 +11,30 @@ var mongoose = require('mongoose'),
  */
 var PeopleSchema = new Schema({
     _id: String,
-    name: {type: String},
-    born: {type: Date},
+    name: String,
+    born: Date,
     asActor:[{
-    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	_id: String,
     	name: String
     }],
     asProducer:[{
-    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	_id: String,
     	name: String
     }],
     asSinger:[{
-    	reference: { type: Schema.ObjectId, ref: 'Song'},
+    	_id: String,
     	name: String
     }],
     asDirector:[{
-    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	_id: String,
     	name: String
     }],
     asMusicDirector:[{
-    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	_id: String,
     	name: String
     }],
     asWriter:[{
-    	reference: { type: Schema.ObjectId, ref: 'Movie'},
+    	_id: String,
     	name: String
     }]
 });

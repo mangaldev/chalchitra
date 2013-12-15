@@ -12,40 +12,28 @@ var mongoose = require('mongoose'),
  */
 var SongSchema = new Schema({
     _id: String,
-    title: {
-        type: String
-    },
+    title: String,
     movie: {
-        name: {type: String},
-        reference: { type: Schema.ObjectId,ref:'Movie' }
+        _id: String,
+        name: String
     },
     singers: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     musicDirectors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     writers: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
-    genre:[{
-        type: String
-    }],
-    releaseDate:{
-        type: Date
-    },
-    language:[{
-        type: String
-    }],
-    country:{
-        type: String
-    },
-    rating:{
-        type: Number
-    }
+    genre: [String],
+    releaseDate: Date,
+    language: [String],
+    country: String,
+    rating: Number
 });
 
 

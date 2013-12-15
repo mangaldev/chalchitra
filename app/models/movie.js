@@ -12,49 +12,39 @@ var mongoose = require('mongoose'),
  */
 var MovieSchema = new Schema({
     _id: String,
-    title: {
-        type: String
-    },
+    title: String,
     actors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String},
-        knownAs: {type: String}
+        _id: String,
+        name: String,
+        knownAs: String
     }],
     directors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     producers: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     musicDirectors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     writers: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
     editors: [{
-        reference: { type: Schema.ObjectId,ref:'People' },
-        name: {type: String}
+        _id: String,
+        name: String
     }],
-    genre:[{
-        type: String
-    }],
-    releaseDate:{
-        type: Date
-    },
-    language:[{
-        type: String
-    }],
-    country:{
-        type: String
-    },
+    genre: [String],
+    releaseDate: Date,
+    language: [String],
+    country: String,
     songs: [{
-        reference: { type: Schema.ObjectId,ref:'Song' },
-        title: {type: String}
+        _id: String,
+        title: String
     }],
     bio: String
 });
