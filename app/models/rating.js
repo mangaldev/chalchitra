@@ -3,7 +3,6 @@
  */
 var mongoose = require('mongoose'),
 	config = require('../../config/config'),
-	textSearch = require('mongoose-text-search'),
     Schema = mongoose.Schema;
 
 /**
@@ -11,11 +10,24 @@ var mongoose = require('mongoose'),
  */
 var RatingSchema = new Schema({
     _id: String,
-    userId: String,
+    userName: String,
     movieId: String,
     rating: Number
 });
 
-RatingSchema.plugin(textSearch);
+
+/**
+ * Statics
+ */
+RatingSchema.statics = {
+    findUserRatingByMovieId: function(userName, movieId, cb) {
+        console.log("calling with id "+movieId +" userName "+ userName);
+        this.findOne({
+            userName: userName,
+            movieId: movieId
+        }).exec(cb);//.populate('actors', 'name')
+    }
+};
+
 
 mongoose.model('Rating', RatingSchema);

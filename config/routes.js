@@ -68,13 +68,18 @@ module.exports = function(app, passport, auth) {
 
     //Movie route
     var movies = require('../app/controllers/movies');
+    var ratings = require('../app/controllers/ratings');
 
 
     //Finish with setting up the articleId param
     app.param('searchString', movies.findMoviesByTextSearch);
     app.param('movieId', movies.findMovieById);
+
+
     
     //app.get('/search', movies.all);
     app.get('/search/:searchString', movies.show);
     app.get('/movie/:movieId', movies.show);
+
+    app.get('/rating/:userName/:movie', ratings.findUserRatingByMovie);
 };

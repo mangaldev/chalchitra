@@ -74,7 +74,7 @@
  * Show a movie
  */
  exports.show = function(req, res) {
-    console.log("Executing show command"+ req.movie);
+    console.log("Executing show command for Movie Schema");
     res.jsonp(req.movie);
 };
 
