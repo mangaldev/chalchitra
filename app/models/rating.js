@@ -27,6 +27,7 @@ RatingSchema.statics = {
             movieId: movieId
         }).exec(cb);//.populate('actors', 'name')
     }
+
 };
 
 

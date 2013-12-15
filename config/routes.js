@@ -79,6 +79,9 @@ module.exports = function(app, passport, auth) {
 
     app.get('/search/:searchString', movies.show);
     app.get('/movie/:movieId', movies.show);
-    app.get('/rating/:userName/:movie', ratings.findUserRatingByMovie);
+
+    app.get('/rating/:userName/:movie', ratings.findUserRatingByMovie,ratings.show);
+    app.post('/rating',ratings.updateRating,ratings.show);
+
     app.get('/people/:peopleId', peoples.show);
 };

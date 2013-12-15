@@ -25,11 +25,14 @@
             return next(err);
         }
             if (!movie) return next(new Error('Failed to load movie ' + id));
-            console.log("Result returned from findMovieById === "+movie);
+            // console.log("Result returned from findMovieById === "+movie);
             req.movie = movie;
             next();
         });
 };
+
+
+
 
 /**
  * Find movies by using Text Search

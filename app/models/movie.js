@@ -62,6 +62,8 @@ MovieSchema.statics = {
             _id: id
         }).exec(cb);//.populate('actors', 'name')
     }
+
+    
 };
 
 

@@ -9,22 +9,46 @@
 /**
  * find Rating
  */
- exports.findUserRatingByMovie = function(req, res) {
+ exports.findUserRatingByMovie = function(req, res, next) {
     var name = req.params.userName;
-    console.log(name);
     var movieId = req.params.movie;
-    console.log(movieId);
+    console.log("Finding User rating using name = "+name +" and movieId = "+ movieId);
     Rating.findUserRatingByMovieId(name,movieId,function(err, result) {
         if (err) { 
             console.log("Error in finding by id");
             // return next(err);
         }
-            console.log("Result returned from findMovieById === "+result);
-            req.rating = result;
-            res.jsonp(req.rating);
-        });
-    console.log("Executing show command for Rating Schema");
-    
+        console.log("Result returned from findUserRatingByMovie === "+result);
+        req.rating = result;
+        next();
+    });
+};
+
+/**
+ * Update Rating
+ */
+ exports.updateRating = function(req, res, next) {
+    var userRating = new Rating(req.body);
+    var name = userRating.userName;
+    var movieId = userRating.movieId;
+    Rating.findUserRatingByMovieId(name,movieId,function(err, result) {
+        if (err) { 
+            console.log("Error in finding by id");
+        }
+        console.log("Result returned from findUserRatingByMovie === "+result);
+        result.rating = userRating.rating;
+        result.save();
+        req.rating = result;
+        next();
+    });
+
 };
 
 
+/**
+ * Show a rating
+ */
+ exports.show = function(req, res) {
+    console.log("Executing show command for Rating Schema");
+    res.jsonp(req.rating);
+};
