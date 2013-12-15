@@ -1,3 +1,5 @@
+db.songs.drop();
+
  db.songs.insert({
     _id: ("dhoomdhoomid"),
     title: "Dhoom Dhoom karna hai kar le",

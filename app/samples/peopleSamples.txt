@@ -1,3 +1,5 @@
+db.peoples.drop();
+
 db.peoples.insert({
 	_id: ("aamirkhanid"),
 	name:"Aamir Khan",

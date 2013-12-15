@@ -1,5 +1,7 @@
 //Setting up route
-angular.module('mean').config(['$routeProvider',
+angular.module('mean')
+
+.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/', {
@@ -11,16 +13,20 @@ angular.module('mean').config(['$routeProvider',
         when('/movie/:movieId', {
             templateUrl: 'views/movie.html'
         }).
+        when('/rating', {
+            templateUrl: 'views/rating.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
     }
-]);
+    ]);
 
 //Whenver there will be ! in URL ,,, this file will be in role else route.js of express will be in role
 //Setting HTML5 Location Mode
-angular.module('mean').config(['$locationProvider',
+angular.module('mean')
+.config(['$locationProvider',
     function($locationProvider) {
         $locationProvider.hashPrefix("!");
     }
-]);
+    ]);
