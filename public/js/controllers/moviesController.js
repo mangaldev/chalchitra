@@ -14,14 +14,12 @@ angular.module('mean.search')
 			Movie.get({movieId:movieId},function(results) {
 				console.log("Got result back after querying : "+results);
 				$scope.movie = results;
-        	});
+			});
 			if (Global.authenticated) 
 			{
 				console.log("User "+user.username+ " got authenticated");
 				$scope.userRating  = Rating.get({userName:user.username,movie:movieId},function(results) {
 					console.log("Got Rating for user : "+results);
-					// $scope.rating = results;
-					// $scope.movie.userRating = results.rating;
 					if(results)
 						oldRating = results.rating;
 
@@ -32,13 +30,13 @@ angular.module('mean.search')
 
 		$scope.updateUserRating = function(){
 			if(oldRating != $scope.userRating.rating){
-			console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
-			oldRating = $scope.userRating.rating;
-			$scope.userRating.userName = user.username;
-			$scope.userRating.movieId = movieId;
-			console.log("Saving Rating ->" + $scope.userRating);
-			$scope.userRating.$save();
-		}
+				console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
+				oldRating = $scope.userRating.rating;
+				$scope.userRating.userName = user.username;
+				$scope.userRating.movieId = movieId;
+				console.log("Saving Rating ->" + $scope.userRating);
+				$scope.userRating.$save();
+			}
 
 		}
 

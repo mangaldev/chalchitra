@@ -31,11 +31,12 @@
     var userRating = new Rating(req.body);
     var name = userRating.userName;
     var movieId = userRating.movieId;
-    
+    Rating.update({userName:name, movieId:movieId},{$set:{rating:userRating.rating}},{upsert:true},function (err, numberAffected, raw) {
+      if (err) return handleError(err);
+      console.log('The number of updated documents was %d', numberAffected);
+      console.log('The raw response from Mongo was ', raw);
+    });
     console.log("Updating new userRating"+ userRating);
-    if(!userRating._id)
-        userRating._id = name+movieId;
-    userRating.save();
     req.rating = userRating;
     next();
 };
