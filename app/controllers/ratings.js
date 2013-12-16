@@ -11,7 +11,7 @@
  */
  exports.findUserRatingByMovie = function(req, res, next) {
     var name = req.params.userName;
-    var movieId = req.params.movie;
+    var movieId = req.params.movieId;
     console.log("Finding User rating using name = "+name +" and movieId = "+ movieId);
     Rating.findUserRatingByMovieId(name,movieId,function(err, result) {
         if (err) { 

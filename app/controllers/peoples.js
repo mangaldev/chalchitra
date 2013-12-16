@@ -13,7 +13,8 @@ var textSearchOptions = {
 /**
  * Find people by id
  */
-exports.findPeopleById = function(req, res, next, id) {
+exports.findPeopleById = function(req, res, next) {
+    var id = req.params.peopleId;
     console.log("Searching people by id "+id);
     People.load(id, function(err, people) {
         if (err) { 
@@ -30,7 +31,8 @@ exports.findPeopleById = function(req, res, next, id) {
 /**
  * Find peoples by using Text Search
  */ 
-exports.findPeoplesByTextSearch = function(req, res,next,id) {
+exports.findPeoplesByTextSearch = function(req, res,next) {
+    var id = req.params.peopleId;
     console.log("In exports.people...Got id : "+id);
     People.textSearch(id,textSearchOptions,function(err, peoples) {
         if (err) {

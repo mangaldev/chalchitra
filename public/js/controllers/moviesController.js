@@ -1,7 +1,7 @@
 angular.module('mean.search')
 .controller('MovieController', 
-	['Global','$scope', '$routeParams', '$location','Movie','Rating',
-	function (Global,$scope, $routeParams, $location,Movie,Rating) {
+	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating',
+	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating) {
 		$scope.global = Global; 
 		var user = Global.user;
 		var movieId =  $routeParams.movieId ;
@@ -22,23 +22,43 @@ angular.module('mean.search')
 					console.log("Got Rating for user : "+results);
 					if(results)
 						oldRating = results.rating;
-
-
 				});
 			}
 		}
 
 		$scope.updateUserRating = function(){
-			if(oldRating != $scope.userRating.rating){
-				console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
-				oldRating = $scope.userRating.rating;
-				$scope.userRating.userName = user.username;
-				$scope.userRating.movieId = movieId;
-				console.log("Saving Rating ->" + $scope.userRating);
-				$scope.userRating.$save();
+			if($scope.userRating && oldRating != $scope.userRating.rating){
+
+				if(Global.authenticated)
+				{
+					if(oldRating){
+						$scope.movie.rating = $scope.movie.rating - oldRating + $scope.userRating.rating;
+					}
+					else{
+						if($scope.movie.totalUsersRated)
+							$scope.movie.totalUsersRated += 1;
+						else
+							$scope.movie.totalUsersRated = 1;
+						$scope.movie.rating = $scope.movie.rating + $scope.userRating.rating;				
+					}
+					console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
+					oldRating = $scope.userRating.rating;
+					$scope.userRating.userName = user.username;
+					$scope.userRating.movieId = movieId;
+					console.log("Saving Rating ->" + $scope.userRating);
+					$scope.userRating.$save();
+					$scope.movie.$save();
+				}
+				else
+				{
+					// open dialog
+					
+				}
 			}
 
 		}
 
 
 	}]);
+
+

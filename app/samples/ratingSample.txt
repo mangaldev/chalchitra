@@ -1,16 +1,1 @@
-db.ratings.drop()
-
-db.ratings.insert({
-	_id: "rating1",
-	userName: "mdev",
-	movieId: "dhoom3id",
-	rating: 8
-})
-
-
-db.ratings.insert({
-	_id: "rating2",
-	userName: "mdev",
-	movieId: "don2id",
-	rating: 2
-})
+db.ratings.remove()

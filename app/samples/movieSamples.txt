@@ -18,8 +18,8 @@ db.movies.insert({
 	country: "India",
 	songs: [{_id: ("dhoomdhoomid"), title:"Dhoom Dhoom karna hai kar le"}],
 	bio: "Dhoom 3 is an upcoming Hindi action thriller film, written and directed by Vijay Krishna Acharya and produced by Aditya Chopra. It will be the third installment of the popular Dhoom series. Abhishek Bachchan and Uday Chopra will reprise their roles as Jai Dixit and Ali Akbar while Aamir Khan and Katrina Kaif form the antagonist duo. Believed to be one of the most expensive Indian films of all time, Dhoom 3 will be released on 20 December 2013 in regular 2D and IMAX formats. This is the first Bollywood movie to be released in the IMAX format. The film will also be released in Dolby Atmos. The film is also being dubbed into Telugu and Tamil for release in South India, and into Arabic for release in the Middle East.",
-	rating: 6,
-	totalUsersRated: 1
+	rating: 0,
+	totalUsersRated: 0
 });
 
 db.movies.insert({
@@ -40,8 +40,8 @@ db.movies.insert({
 	country: "India",
 	songs: [{_id: ("dhoomdhoomid"), title:"Dhoom Dhoom karna hai kar le"}],
 	bio: "Dhoom 3 is an upcoming Hindi action thriller film, written and directed by Vijay Krishna Acharya and produced by Aditya Chopra. It will be the third installment of the popular Dhoom series. Abhishek Bachchan and Uday Chopra will reprise their roles as Jai Dixit and Ali Akbar while Aamir Khan and Katrina Kaif form the antagonist duo. Believed to be one of the most expensive Indian films of all time, Dhoom 3 will be released on 20 December 2013 in regular 2D and IMAX formats. This is the first Bollywood movie to be released in the IMAX format. The film will also be released in Dolby Atmos. The film is also being dubbed into Telugu and Tamil for release in South India, and into Arabic for release in the Middle East.",
-	rating: 4,
-	totalUsersRated: 1
+	rating: 0,
+	totalUsersRated: 0
 });
 
 

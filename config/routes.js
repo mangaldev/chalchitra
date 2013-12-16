@@ -69,19 +69,14 @@ module.exports = function(app, passport, auth) {
     var movies = require('../app/controllers/movies');
     var ratings = require('../app/controllers/ratings');
     var peoples = require('../app/controllers/peoples');
+   
 
+    app.get('/search/:searchString', movies.findMoviesByTextSearch,movies.show);
+    app.get('/movie/:movieId',  movies.findMovieById,movies.show);
+    app.post('/movie/:movieId', movies.updateMovieRatingById,movies.show);
 
-    //Finish with setting up the articleId param
-    app.param('searchString', movies.findMoviesByTextSearch);
-    app.param('movieId', movies.findMovieById);
-    app.param('peopleId', peoples.findPeopleById);
-
-
-    app.get('/search/:searchString', movies.show);
-    app.get('/movie/:movieId', movies.show);
-
-    app.get('/rating/:userName/:movie', ratings.findUserRatingByMovie,ratings.show);
+    app.get('/rating/:userName/:movieId', ratings.findUserRatingByMovie,ratings.show);
     app.post('/rating',ratings.updateRating,ratings.show);
 
-    app.get('/people/:peopleId', peoples.show);
+    app.get('/people/:peopleId',peoples.findPeopleById, peoples.show);
 };

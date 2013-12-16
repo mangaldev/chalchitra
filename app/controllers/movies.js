@@ -17,7 +17,8 @@
 /**
  * Find movie by id
  */
- exports.findMovieById = function(req, res, next, id) {
+ exports.findMovieById = function(req, res, next) {
+    var id = req.params.movieId;
     console.log("Searching movie by id "+id);
     Movie.load(id, function(err, movie) {
         if (err) { 
@@ -31,13 +32,35 @@
         });
 };
 
+/**
+ * Find movie by id
+ */
+ exports.updateMovieRatingById = function(req, res, next) {
+    var id = req.params.movieId;
+    
+    var movie = new Movie(req.body);
+    console.log("------------------------------------------------------------")
+    console.log("Searching movie by id "+id + "------>"+movie);
+    console.log("------------------------------------------------------------")
+    var movieId = movie._id;
+    Movie.update({_id:movieId},{$set:{rating:movie.rating, totalUsersRated: movie.totalUsersRated}},{upsert:true},function (err, numberAffected, raw) {
+      if (err) return handleError(err);
+      console.log('The number of updated documents was %d', numberAffected);
+      console.log('The raw response from Mongo was ', raw);
+    });
+    console.log("Updating new userRating"+ movie);
+    req.movie = movie;
+    next();
+};
+
 
 
 
 /**
  * Find movies by using Text Search
  */ 
- exports.findMoviesByTextSearch = function(req, res,next,id) {
+ exports.findMoviesByTextSearch = function(req, res,next) {
+    var id = req.params.searchString;
     console.log("In exports.movie...Got id : "+id);
     Movie.textSearch(id,textSearchOptions,function(err, movies) {
         if (err) {
