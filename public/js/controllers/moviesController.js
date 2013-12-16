@@ -20,19 +20,23 @@ angular.module('mean.search')
 				console.log("User "+user.username+ " got authenticated");
 				$scope.userRating  = Rating.get({userName:user.username,movie:movieId},function(results) {
 					console.log("Got Rating for user : "+results);
-					$scope.rating = results;
-					$scope.movie.userRating = results.rating;
-					oldRating = results.rating;
+					// $scope.rating = results;
+					// $scope.movie.userRating = results.rating;
+					if(results)
+						oldRating = results.rating;
+
+
 				});
 			}
 		}
 
 		$scope.updateUserRating = function(){
-			if(oldRating != $scope.movie.userRating){
-			console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.movie.userRating);
-			oldRating = $scope.movie.userRating;
-
-			$scope.userRating.rating = $scope.movie.userRating;
+			if(oldRating != $scope.userRating.rating){
+			console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
+			oldRating = $scope.userRating.rating;
+			$scope.userRating.userName = user.username;
+			$scope.userRating.movieId = movieId;
+			console.log("Saving Rating ->" + $scope.userRating);
 			$scope.userRating.$save();
 		}
 

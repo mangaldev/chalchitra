@@ -12,7 +12,7 @@
                         <i ng-repeat="r in range" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon" ng-class="$index < val && (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')"></i>
                     </span>
                 </script> 
-                <b>Your rating:</b> <rating value="movie.userRating" max="10" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="updateUserRating()"></rating>  {{movie.userRating}} / 10
+                <b>Your rating:</b> <rating value="userRating.rating" max="10" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="updateUserRating()"></rating>  {{userRating.rating}} / 10
             </div>
             
             <div>

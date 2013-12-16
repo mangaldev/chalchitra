@@ -31,17 +31,13 @@
     var userRating = new Rating(req.body);
     var name = userRating.userName;
     var movieId = userRating.movieId;
-    Rating.findUserRatingByMovieId(name,movieId,function(err, result) {
-        if (err) { 
-            console.log("Error in finding by id");
-        }
-        console.log("Result returned from findUserRatingByMovie === "+result);
-        result.rating = userRating.rating;
-        result.save();
-        req.rating = result;
-        next();
-    });
-
+    
+    console.log("Updating new userRating"+ userRating);
+    if(!userRating._id)
+        userRating._id = name+movieId;
+    userRating.save();
+    req.rating = userRating;
+    next();
 };
 
 
