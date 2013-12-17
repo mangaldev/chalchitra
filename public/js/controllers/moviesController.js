@@ -51,14 +51,19 @@ angular.module('mean.search')
 				}
 				else
 				{
-					// open dialog
-					
+					oldRating = $scope.userRating.rating;
+					$scope.open();	
 				}
 			}
 
 		}
 
 
+
+		$scope.open = function () {
+			console.log("Opening this dialog");
+			var modalInstance = $modal.open({
+				templateUrl: 'views/loginModal.html'
+			});
+		};
 	}]);
-
-
