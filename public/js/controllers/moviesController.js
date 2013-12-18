@@ -61,15 +61,13 @@ angular.module('mean.search')
 					$scope.open();	
 				}
 			}
-
 		}
-
-
 
 		$scope.open = function () {
 			console.log("Opening this dialog");
 			var modalInstance = $modal.open({
-				templateUrl: 'views/loginModal.html'
+				templateUrl: 'views/loginModal.html',
+				controller: ModalInstanceCtrl
 			});
 		};
 
@@ -88,3 +86,9 @@ angular.module('mean.search')
 			}
 		}
 	}]);
+
+var ModalInstanceCtrl = function ($scope, $modalInstance) {
+	$scope.cancel = function () {
+    	$modalInstance.dismiss('cancel');
+  	};
+}
