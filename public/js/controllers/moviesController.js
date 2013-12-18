@@ -1,7 +1,7 @@
 angular.module('mean.search')
 .controller('MovieController', 
-	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating',
-	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating) {
+	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating','Review',
+	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating,Review) {
 		$scope.global = Global; 
 		var user = Global.user;
 		var movieId =  $routeParams.movieId ;
@@ -18,12 +18,18 @@ angular.module('mean.search')
 			if (Global.authenticated) 
 			{
 				console.log("User "+user.username+ " got authenticated");
-				$scope.userRating  = Rating.get({userName:user.username,movie:movieId},function(results) {
+				$scope.userRating  = Rating.get({userName:user.username,movieId:movieId},function(results) {
 					console.log("Got Rating for user : "+results);
 					if(results)
 						oldRating = results.rating;
 				});
+				$scope.userReview =  Review.get({userName:user.username,movieId:movieId},function(results) {
+					console.log("Got Review for user : "+results);
+				});
 			}
+			$scope.movieReviews =  Review.query({movieId:movieId},function(results) {
+				console.log("Got Movie Reviews for movie  : "+movieId + " === "+results);
+			});
 		}
 
 		$scope.updateUserRating = function(){
@@ -66,4 +72,19 @@ angular.module('mean.search')
 				templateUrl: 'views/loginModal.html'
 			});
 		};
+
+		$scope.addReview = function(){
+			if (Global.authenticated) 
+			{
+				console.log("Adding new Review for user "+user.username+" with review text -> "+ $scope.userReview.text);
+				$scope.userReview.userName = user.username;
+				$scope.userReview.movieId = movieId;
+				$scope.userReview.score = 0;
+				$scope.userReview.$save();
+			}
+			else
+			{
+				$scope.open();	
+			}
+		}
 	}]);
