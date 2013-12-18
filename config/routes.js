@@ -69,6 +69,7 @@ module.exports = function(app, passport, auth) {
     var movies = require('../app/controllers/movies');
     var ratings = require('../app/controllers/ratings');
     var peoples = require('../app/controllers/peoples');
+    var reviews = require('../app/controllers/reviews');
    
 
     app.get('/search/:searchString', movies.findMoviesByTextSearch,movies.show);
@@ -77,6 +78,10 @@ module.exports = function(app, passport, auth) {
 
     app.get('/rating/:userName/:movieId', ratings.findUserRatingByMovie,ratings.show);
     app.post('/rating',ratings.updateRating,ratings.show);
+
+    app.get('/review/:userName/:movieId', reviews.findUserReviewsByMovie,reviews.show);
+    app.get('/review/:movieId',reviews.findAllReviewsByMovie,reviews.show);
+    app.post('/review',reviews.addNewReview,reviews.show);
 
     app.get('/people/:peopleId',peoples.findPeopleById, peoples.show);
 };
