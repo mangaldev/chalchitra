@@ -1,1 +1,1 @@
-Indian Movie Database
+Movie Beans

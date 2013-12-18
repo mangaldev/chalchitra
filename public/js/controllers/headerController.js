@@ -5,6 +5,6 @@ angular.module('mean.system').controller('HeaderController',
 		$scope.isCollapsed = false;
 		$scope.moviename = '';
 		$scope.search = function() {
-			$location.path('search/' + $scope.moviename);
+			window.location = '/#!/search/' + $scope.moviename;
 		};
 	}]);
