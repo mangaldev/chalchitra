@@ -3,6 +3,8 @@ angular.module('mean.search')
 	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating','Review',
 	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating,Review) {
 		$scope.global = Global; 
+		$scope.isCollapsed = "collapse";
+		$scope.isUserReviewPresent = false;
 		var user = Global.user;
 		var movieId =  $routeParams.movieId ;
 		var oldRating;
@@ -25,7 +27,9 @@ angular.module('mean.search')
 				});
 				$scope.userReview =  Review.get({userName:user.username,movieId:movieId},function(results) {
 					console.log("Got Review for user : "+results);
+					if(results.text)  $scope.isUserReviewPresent = true;
 				});
+				
 			}
 			$scope.movieReviews =  Review.query({movieId:movieId},function(results) {
 				console.log("Got Movie Reviews for movie  : "+movieId + " === "+results);
@@ -71,7 +75,7 @@ angular.module('mean.search')
 			});
 		};
 
-		$scope.addReview = function(){
+		$scope.submitReview = function(){
 			if (Global.authenticated) 
 			{
 				console.log("Adding new Review for user "+user.username+" with review text -> "+ $scope.userReview.text);
@@ -79,9 +83,17 @@ angular.module('mean.search')
 				$scope.userReview.movieId = movieId;
 				$scope.userReview.score = 0;
 				$scope.userReview.$save();
+				$scope.isUserReviewPresent = true;
 			}
 			else
 			{
+				$scope.open();	
+			}
+		}
+		$scope.addReview = function() {
+			if (Global.authenticated) {
+				$scope.isCollapsed = "collapse in";
+			}else {
 				$scope.open();	
 			}
 		}
