@@ -41,10 +41,10 @@ var SongSchema = new Schema({
  * Statics
  */
 SongSchema.statics = {
-    load: function(id, cb) {
+    findSongsByMovieId: function(id, cb) {
         console.log("calling with id "+id);
-        this.findOne({
-            _id: id
+        this.find({
+            'movie._id': id
         }).exec(cb);//.populate('actors', 'name')
     }
 };

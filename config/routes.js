@@ -70,6 +70,8 @@ module.exports = function(app, passport, auth) {
     var ratings = require('../app/controllers/ratings');
     var peoples = require('../app/controllers/peoples');
     var reviews = require('../app/controllers/reviews');
+    var songs = require('../app/controllers/songs');
+
    
 
     app.get('/search/:searchString', movies.findMoviesByTextSearch,movies.show);
@@ -84,4 +86,6 @@ module.exports = function(app, passport, auth) {
     app.post('/review',reviews.addNewReview,reviews.show);
 
     app.get('/people/:peopleId',peoples.findPeopleById, peoples.show);
+
+    app.get('/song/:movieId',songs.findSongsByMovieId, songs.show);
 };

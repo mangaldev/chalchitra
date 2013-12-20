@@ -1,7 +1,7 @@
 angular.module('mean.search')
 .controller('MovieController', 
-	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating','Review',
-	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating,Review) {
+	['Global','$scope', '$routeParams', '$location','$modal','Movie','Rating','Review','Song',
+	function (Global,$scope, $routeParams, $location,$modal,Movie,Rating,Review,Song) {
 		$scope.global = Global; 
 		$scope.isCollapsed = "collapse";
 		$scope.isUserReviewPresent = false;
@@ -17,22 +17,33 @@ angular.module('mean.search')
 				console.log("Got result back after querying : "+results);
 				$scope.movie = results;
 			});
+
 			if (Global.authenticated) 
 			{
 				console.log("User "+user.username+ " got authenticated");
-				$scope.userRating  = Rating.get({userName:user.username,movieId:movieId},function(results) {
+				Rating.get({userName:user.username,movieId:movieId},function(results) {
 					console.log("Got Rating for user : "+results);
+					$scope.userRating  = results;
 					if(results)
 						oldRating = results.rating;
 				});
-				$scope.userReview =  Review.get({userName:user.username,movieId:movieId},function(results) {
+				Review.get({userName:user.username,movieId:movieId},function(results) {
 					console.log("Got Review for user : "+results);
+					$scope.userReview =  results;
 					if(results.text)  $scope.isUserReviewPresent = true;
 				});
+
+
 				
 			}
-			$scope.movieReviews =  Review.query({movieId:movieId},function(results) {
+			Review.query({movieId:movieId},function(results) {
 				console.log("Got Movie Reviews for movie  : "+movieId + " === "+results);
+				$scope.movieReviews =  results;
+			});
+
+			Song.query({movieId:movieId},function(results) {
+				console.log("Got Songs for user : "+results);
+				$scope.movie.songs =  results;
 			});
 		}
 
@@ -101,6 +112,6 @@ angular.module('mean.search')
 
 var ModalInstanceCtrl = function ($scope, $modalInstance) {
 	$scope.cancel = function () {
-    	$modalInstance.dismiss('cancel');
-  	};
+		$modalInstance.dismiss('cancel');
+	};
 }

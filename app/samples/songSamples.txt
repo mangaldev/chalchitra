@@ -3,10 +3,10 @@ db.songs.drop();
  db.songs.insert({
     _id: ("dhoomdhoomid"),
     title: "Dhoom Dhoom karna hai kar le",
-    movie: {name: "Dhoom 3",reference: ("dhoom3id")},
+    movie: {name: "Dhoom 3",_id: ("dhoom3id")},
     singers: [],
-    musicDirectors: [{referecne: ("pritamId"), name:"Pritam"}],
-    writers: [{referecne: ("pritamId"), name:"Pritam"}],
+    musicDirectors: [{_id: ("pritamId"), name:"Pritam"}],
+    writers: [{_id: ("pritamId"), name:"Pritam"}],
     genre:["Action","Romantic"],
     releaseDate:"2013-012-20",
     language:["Hindi"],
