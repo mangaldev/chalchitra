@@ -1,0 +1,31 @@
+angular.module('mean.search').factory('constants', function() {
+  return {
+    IFRAME_API_URL: '//www.youtube.com/iframe_api',
+    GOOGLE_APIS_CLIENT_URL: 'https://apis.google.com/js/client.js?onload=',
+    GOOGLE_APIS_CLIENT_CALLBACK: 'onClientLoad',
+    OAUTH2_CLIENT_ID: '269758065116.apps.googleusercontent.com',
+    OAUTH2_SCOPES: 'https://www.googleapis.com/auth/youtube',
+    OAUTH2_REVOKE_URL: 'https://accounts.google.com/o/oauth2/revoke?token=',
+    API_KEY: 'AIzaSyAe112w0RobjC1XtoO3Os3YI6cvMZm9oKk',
+    FREEBASE_API_URL: 'https://www.googleapis.com/freebase/v1/search',
+    YOUTUBE_API_SERVICE: 'youtube',
+    YOUTUBE_API_VERSION: 'v3',
+    FREEBASE_API_MAX_RESULTS: 30,
+    FREEBASE_CACHE_MINUTES: 60 * 24,
+    YOUTUBE_CACHE_MINUTES: 60 * 24,
+    MIN_SCORE: 60,
+    MAX_SCORE: 100,
+    SCORE_NORMALIZATION_FACTOR: 35,
+    YOUTUBE_API_MAX_RESULTS: 50,
+    DEFAULT_PROFILE_THUMBNAIL: 'https://s.ytimg.com/yts/img/no_videos_140-vfl5AhOQY.png',
+    VIDEO_KIND: 'youtube#video',
+    CHANNEL_KIND: 'youtube#channel',
+    PLAYLIST_KIND: 'youtube#playlist',
+    YOUTUBE_VIDEO_PAGE_URL_PREFIX: 'http://youtu.be/',
+    YOUTUBE_CHANNEL_PAGE_URL_PREFIX: 'http://youtube.com/channel/',
+    YOUTUBE_PLAYLIST_PAGE_URL_PREFIX: 'http://www.youtube.com/playlist?list=',
+    DEFAULT_DISPLAY_NAME: 'Stranger',
+	RECOMMENDATION_TYPE: 'recommendation',
+	SOCIAL_TYPE: 'social'
+  };
+});
