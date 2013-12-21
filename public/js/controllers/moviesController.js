@@ -95,6 +95,7 @@ angular.module('mean.search')
 				$scope.userReview.score = 0;
 				$scope.userReview.$save();
 				$scope.isUserReviewPresent = true;
+				$scope.movieReviews.push($scope.userReview);
 			}
 			else
 			{
