@@ -20,7 +20,7 @@
                             
                         </div>            
                         <div>
-                            Ratings: {{(movie.rating/movie.totalUsersRated) ||  0}}/10 from {{movie.totalUsersRated}} users
+                            Ratings: {{(Math.round((movie.rating/movie.totalUsersRated) * 10) / 10) ||  0}}/10 from {{movie.totalUsersRated}} users
                         </div>
                         <hr/>
                         <p>{{movie.bio}}</p>
