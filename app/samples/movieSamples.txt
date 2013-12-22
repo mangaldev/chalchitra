@@ -192,3 +192,4 @@ db.movies.insert({
 
 
 db.movies.ensureIndex( { "data.text": "text" } )
+db.movies.ensureIndex({"data.id":1},{unique:true,dropDups:true});
