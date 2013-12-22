@@ -8,7 +8,7 @@
 
 
  var textSearchOptions = {
-    project: 'data.text'                // do not include the `created` property
+    project: 'data'                // do not include the `created` property
   // , filter: { likes: { $gt: 1000000 }} // casts queries based on schema
   // , limit: 10
   // , language: 'spanish'
@@ -69,6 +69,7 @@
             });
         } else {
             var resultArray = new Array();
+            console.log("findMoviesByTextSearch::movies: " + movies);
             for (var i = movies.results.length - 1; i >= 0; i--) {
                 console.log(movies.results[i].obj);
                 resultArray[i] = movies.results[i].obj;

@@ -1,48 +1,194 @@
 db.movies.drop();
 
-db.movies.insert({
-	_id: ("dhoom3id"),
-	title:"Dhoom 3",
-	actors: [{_id: ("aamirkhanid"), name:"Aamir Khan",knownAs:"Sahir"},
-			 {_id: ("abhishekBachid"),name:"Abhishek Bachpan",knownAs:"A.C.P Jai Dixit"},
-			 {_id: ("katrinaid"),name:"Katrina Kaif",knownAs:"Aaliya"},
-			 ],
-	directors: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	producers: [{_id: ("adityachopraid"), name:"Aditya Chopra"}],
-	musicDirectors: [{_id: ("pritamId"), name:"Pritam"}],
-	writers: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	editors: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	genre: ["Action","Thriller"],
-	releaseDate: "2013-12-20",
-	language: ["Hindi"],
-	country: "India",
-	songs: [{_id: ("dhoomdhoomid"), title:"Dhoom Dhoom karna hai kar le"}],
-	bio: "Dhoom 3 is an upcoming Hindi action thriller film, written and directed by Vijay Krishna Acharya and produced by Aditya Chopra. It will be the third installment of the popular Dhoom series. Abhishek Bachchan and Uday Chopra will reprise their roles as Jai Dixit and Ali Akbar while Aamir Khan and Katrina Kaif form the antagonist duo. Believed to be one of the most expensive Indian films of all time, Dhoom 3 will be released on 20 December 2013 in regular 2D and IMAX formats. This is the first Bollywood movie to be released in the IMAX format. The film will also be released in Dolby Atmos. The film is also being dubbed into Telugu and Tamil for release in South India, and into Arabic for release in the Middle East.",
-	rating: 0,
-	totalUsersRated: 0
-});
+db.movies.inser({
+        "_id" : ObjectId("52b6ed99e4b033a261468c29"),
+        "data" : {
+                "text" : "Cars 2",
+                "id" : "/m/0407yj_",
+                "type" : "FREEBASE"
+        },
+        "actors" : [
+                {
+                        "people" : {
+                                "text" : "Owen Wilson",
+                                "id" : "/m/01q_ph",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Lightning McQueen"
+                },
+                {
+                        "people" : {
+                                "text" : "Jason Isaacs",
+                                "id" : "/m/025t9b",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Siddeley"
+                },
+                {
+                        "people" : {
+                                "text" : "Michael Caine",
+                                "id" : "/m/0gnbw",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Finn McMissile"
+                },
+                {
+                        "people" : {
+                                "text" : "Bruce Campbell",
+                                "id" : "/m/01h8f",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Rod 'Torque' Redline"
+                },
+                {
+                        "people" : {
+                                "text" : "Emily Mortimer",
+                                "id" : "/m/03k545",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Holley Shiftwell"
+                },
+                {
+                        "people" : {
+                                "text" : "John Turturro",
+                                "id" : "/m/01swck",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Francesco Bernoulli"
+                },
+                {
+                        "people" : {
+                                "text" : "Bonnie Hunt",
+                                "id" : "/m/015pvh",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Sally Carrera"
+                },
+                {
+                        "people" : {
+                                "text" : "Tony Shalhoub",
+                                "id" : "/m/02661h",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Luigi"
+                },
+                {
+                        "people" : {
+                                "text" : "John Ratzenberger",
+                                "id" : "/m/0p8r1",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Mack"
+                },
+                {
+                        "people" : {
+                                "text" : "Joe Mantegna",
+                                "id" : "/m/026l37",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Grem"
+                }
+        ],
+        "directors" : [
+                {
+                        "text" : "Brad Lewis",
+                        "id" : "/m/02qs34s",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "John Lasseter",
+                        "id" : "/m/04jspq",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "producers" : [
+                {
+                        "text" : "Denise Ream",
+                        "id" : "/m/0b7h_gp",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "musicDirectors" : [
+                {
+                        "text" : "Michael Giacchino",
+                        "id" : "/m/04ls53",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "writers" : [
+                {
+                        "text" : "Ben Queen",
+                        "id" : "/m/02wl06x",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "editors" : [
+                {
+                        "text" : "Stephen Schaffer",
+                        "id" : "/m/05mrw9y",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "genres" : [
+                {
+                        "text" : "Animation",
+                        "id" : "/m/0hcr",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Adventure Film",
+                        "id" : "/m/03k9fj",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Family",
+                        "id" : "/m/0hqxf",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Comedy",
+                        "id" : "/m/05p553",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Spy film",
+                        "id" : "/m/0bkbm",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "releaseDate" : "Jun 18, 2011 12:00:00 AM",
+        "language" : [
+                {
+                        "text" : "English Language",
+                        "id" : "/m/02h40lc",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Japanese Language",
+                        "id" : "/m/03_9r",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "French Language",
+                        "id" : "/m/064_8sq",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Italian Language",
+                        "id" : "/m/02bjrlw",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "country" : [
+                {
+                        "text" : "United States of America",
+                        "id" : "/m/09c7w0",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "rating" : 0,
+        "totalUsersRated" : 0
+})
 
-db.movies.insert({
-	_id: ("don2id"),
-	title:"Don 2",
-	actors: [{_id: ("aamirkhanid"), name:"Aamir Khan",knownAs:"Sahir"},
-			 {_id: ("abhishekBachid"),name:"Abhishek Bachpan",knownAs:"A.C.P Jai Dixit"},
-			 {_id: ("katrinaid"),name:"Katrina Kaif",knownAs:"Aaliya"},
-			 ],
-	directors: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	producers: [{_id: ("adityachopraid"), name:"Aditya Chopra"}],
-	musicDirectors: [{_id: ("pritamId"), name:"Pritam"}],
-	writers: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	editors: [{_id: ("vijaykrishnaid"), name:"Vijay Krishna"}],
-	genre: ["Action","Thriller"],
-	releaseDate: "2013-12-20",
-	language: ["Hindi"],
-	country: "India",
-	songs: [{_id: ("dhoomdhoomid"), title:"Dhoom Dhoom karna hai kar le"}],
-	bio: "Dhoom 3 is an upcoming Hindi action thriller film, written and directed by Vijay Krishna Acharya and produced by Aditya Chopra. It will be the third installment of the popular Dhoom series. Abhishek Bachchan and Uday Chopra will reprise their roles as Jai Dixit and Ali Akbar while Aamir Khan and Katrina Kaif form the antagonist duo. Believed to be one of the most expensive Indian films of all time, Dhoom 3 will be released on 20 December 2013 in regular 2D and IMAX formats. This is the first Bollywood movie to be released in the IMAX format. The film will also be released in Dolby Atmos. The film is also being dubbed into Telugu and Tamil for release in South India, and into Arabic for release in the Middle East.",
-	rating: 0,
-	totalUsersRated: 0
-});
 
-
-db.movies.ensureIndex( { data.text: "text" } )
+db.movies.ensureIndex( { "data.text": "text" } )
