@@ -93,10 +93,10 @@
  * Statics
  */
  MovieSchema.statics = {
-    load: function(searchText, cb) {
-        console.log("calling with id "+searchText);
+    load: function(id, cb) {
+        console.log("calling with id "+ id);
         this.findOne({
-            text: searchText
+            _id: id
         }).exec(cb);//.populate('actors', 'name')
     }
 

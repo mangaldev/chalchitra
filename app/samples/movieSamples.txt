@@ -45,4 +45,4 @@ db.movies.insert({
 });
 
 
-db.movies.ensureIndex( { title: "text" } )
+db.movies.ensureIndex( { data.text: "text" } )

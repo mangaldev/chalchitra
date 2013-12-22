@@ -8,7 +8,7 @@
 
 
  var textSearchOptions = {
-    project: 'title'                // do not include the `created` property
+    project: 'data.text'                // do not include the `created` property
   // , filter: { likes: { $gt: 1000000 }} // casts queries based on schema
   // , limit: 10
   // , language: 'spanish'
