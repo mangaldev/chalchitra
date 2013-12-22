@@ -14,8 +14,8 @@
     data: {
         id: String,
         text: String,
-        type: String,
-    }
+        type: String
+    },
     actors: [{
         people: {
             _id: String,
