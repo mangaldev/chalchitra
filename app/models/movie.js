@@ -11,9 +11,11 @@
  * Movie Schema
  */
  var MovieSchema = new Schema({
-    id: String,
-    text: String,
-    type: String,
+    data: {
+        id: String,
+        text: String,
+        type: String,
+    }
     actors: [{
         people: {
             _id: String,
