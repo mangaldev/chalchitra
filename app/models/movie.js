@@ -49,12 +49,12 @@
     releaseDate: Date,
 
     language:[{
-         _id: String
+         _id: String,
          text: String
     }],
 
     country:[{
-         _id: String
+         _id: String,
          text: String
     }],
 
