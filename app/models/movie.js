@@ -12,76 +12,55 @@
  */
  var MovieSchema = new Schema({
     data: {
-        id: String,
-        text: String,
-        type: String
+        text: String
     },
     actors: [{
         people: {
             _id: String,
-            id: String,
-            text: String,
-            type: String
+            text: String
         },
         role: String
     }],
     directors: [{
         _id: String,
-        id: String,
-        text: String,
-        type: String
+        text: String
     }],
     producers: [{
         _id: String,
-        id: String,
-        text: String,
-        type: String
+        text: String
     }],
     musicDirectors: [{
         _id: String,
-        id: String,
-        text: String,
-        type: String
+        text: String
     }],
     writers: [{
         _id: String,
-        id: String,
-        text: String,
-        type: String
+        text: String
     }],
     editors: [{
         _id: String,
-        id: String,
-        text: String,
-        type: String
+        text: String
     }],
     genre: [{
          _id: String,
-         id: String,
-         text: String,
-         type: String
+         text: String
     }],
 
     releaseDate: Date,
 
     language:[{
-         _id: String,
-         id: String,
-         text: String,
-         type: String
+         _id: String
+         text: String
     }],
 
     country:[{
-         _id: String,
-         id: String,
-         text: String,
-         type: String
+         _id: String
+         text: String
     }],
 
     songs: [{
         _id: String,
-        title: String,
-        type: String
+        title: String
     }],
     bio: String,
     rating: Number,
