@@ -7,7 +7,7 @@
                         <img src="../img/movies/2013/large/Dhoom_3_Film_Poster.jpg" alt="Dhoom 3" class="img-thumbnail">
                     </div>
                     <div class="col-lg-9">
-                        <h2>{{movie.title}}</h2>
+                        <h2>{{movie.text}}</h2>
                         <hr/>
                         <div>
                             <script id="template/rating/rating.html" type="text/ng-template">
@@ -29,7 +29,7 @@
                                 <th>Directors: </th>
                                 <td>
                                     <span data-ng-repeat="director in movie.directors">
-                                        <a href="../#!/people/{{director._id}}">{{director.name}}</a>
+                                        <a href="../#!/people/{{director._id}}">{{director.text}}</a>
                                         <span ng-show=" ! $last ">,</span>
                                     </span>
                                 </td>
@@ -38,7 +38,7 @@
                                 <th>Producers: </th>
                                 <td>
                                     <span data-ng-repeat="producer in movie.producers">
-                                        <a href="../#!/people/{{producer._id}}">{{producer.name}}</a>
+                                        <a href="../#!/people/{{producer._id}}">{{producer.text}}</a>
                                         <span ng-show=" ! $last ">,</span>
                                     </span>
                                 </td>
@@ -47,7 +47,7 @@
                                 <th>Actors: </th>
                                 <td>
                                     <span data-ng-repeat="actor in movie.actors.slice(0, 4)">
-                                        <a href="../#!/people/{{actor._id}}">{{actor.name}}</a>
+                                        <a href="../#!/people/{{actor._id}}">{{actor.people.text}}</a>
                                         <span ng-show=" ! $last ">,</span>
                                     </span>
                                 </td>
@@ -89,7 +89,7 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr data-ng-repeat="actor in movie.actors">
-                            <td>{{actor.name}} as {{actor.knownAs}}</td>
+                            <td>{{actor.people.text}} as {{actor.role}}</td>
                         </tr>
                     </tbody>
                 </table>

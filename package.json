@@ -18,6 +18,7 @@
         "postinstall": "bower install"
     },
     "dependencies": {
+        "node-inspector": "latest",
         "express": "latest",
         "jade": "latest",
         "mongoose": "latest",

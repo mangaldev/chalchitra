@@ -1,50 +1,85 @@
 /**
  * Module dependencies.
  */
-var mongoose = require('mongoose'),
-    config = require('../../config/config'),
-    textSearch = require('mongoose-text-search'),
-    Schema = mongoose.Schema;
+ var mongoose = require('mongoose'),
+ config = require('../../config/config'),
+ textSearch = require('mongoose-text-search'),
+ Schema = mongoose.Schema;
 
 
 /**
  * Movie Schema
  */
-var MovieSchema = new Schema({
-    _id: String,
-    title: String,
+ var MovieSchema = new Schema({
+    id: String,
+    text: String,
+    type: String,
     actors: [{
-        _id: String,
-        name: String,
-        knownAs: String
+        people: {
+            _id: String,
+            id: String,
+            text: String,
+            type: String
+        },
+        role: String
     }],
     directors: [{
         _id: String,
-        name: String
+        id: String,
+        text: String,
+        type: String
     }],
     producers: [{
         _id: String,
-        name: String
+        id: String,
+        text: String,
+        type: String
     }],
     musicDirectors: [{
         _id: String,
-        name: String
+        id: String,
+        text: String,
+        type: String
     }],
     writers: [{
         _id: String,
-        name: String
+        id: String,
+        text: String,
+        type: String
     }],
     editors: [{
         _id: String,
-        name: String
+        id: String,
+        text: String,
+        type: String
     }],
-    genre: [String],
+    genre: [{
+         _id: String,
+         id: String,
+         text: String,
+         type: String
+    }],
+
     releaseDate: Date,
-    language: [String],
-    country: String,
+
+    language:[{
+         _id: String,
+         id: String,
+         text: String,
+         type: String
+    }],
+
+    country:[{
+         _id: String,
+         id: String,
+         text: String,
+         type: String
+    }],
+
     songs: [{
         _id: String,
-        title: String
+        title: String,
+        type: String
     }],
     bio: String,
     rating: Number,
@@ -55,11 +90,11 @@ var MovieSchema = new Schema({
 /**
  * Statics
  */
-MovieSchema.statics = {
-    load: function(id, cb) {
-        console.log("calling with id "+id);
+ MovieSchema.statics = {
+    load: function(searchText, cb) {
+        console.log("calling with id "+searchText);
         this.findOne({
-            _id: id
+            text: searchText
         }).exec(cb);//.populate('actors', 'name')
     }
 
