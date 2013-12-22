@@ -1,6 +1,6 @@
 db.movies.drop();
 
-db.movies.inser({
+db.movies.insert({
         "_id" : ObjectId("52b6ed99e4b033a261468c29"),
         "data" : {
                 "text" : "Cars 2",
