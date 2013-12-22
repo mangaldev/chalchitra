@@ -20,7 +20,7 @@
                             
                         </div>            
                         <div>
-                            Ratings: {{(movie.rating/movie.totalUsersRated) ||  0}}/10 from {{movie.totalUsersRated}} users
+                            Ratings: {{(Math.round((movie.rating/movie.totalUsersRated) * 10) / 10) ||  0}}/10 from {{movie.totalUsersRated}} users
                         </div>
                         <hr/>
                         <p>{{movie.bio}}</p>
@@ -72,9 +72,9 @@
                                 </a>
                             </div>
                             <div id="{{song._id}}" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                {{song.title}}
-                              </div>
+                                <div class="panel-body">
+                                    {{song.title}}
+                                </div>
                             </div>
                         </div>
                     </div>

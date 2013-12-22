@@ -2,18 +2,16 @@ extends ../layouts/default
 
 block content
   .row
-    .offset1.span5
+    .col-xs-5.col-xs-offset-1
       a(href="/auth/facebook")
         img(src="/img/icons/facebook.png")
-      a(href="/auth/github")
-        img(src="/img/icons/github.png")
       a(href="/auth/twitter")
         img(src="/img/icons/twitter.png")
       a(href="/auth/google")
         img(src="/img/icons/google.png")
-    .span6
-      if (typeof errors !== 'undefined')
-        .fade.in.alert.alert-block.alert-error
+    .col-xs-3
+      if (typeof errors !== undefined && errors.length > 0)
+        .alert.alert-error.alert-dismissable
           a.close(data-dismiss="alert", href="javascript:void(0)") x
           ul
             each error in errors

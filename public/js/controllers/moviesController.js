@@ -5,6 +5,7 @@ angular.module('mean.search')
 		$scope.global = Global; 
 		$scope.isCollapsed = "collapse";
 		$scope.isUserReviewPresent = false;
+		$scope.Math = window.Math;
 		var user = Global.user;
 		var movieId =  $routeParams.movieId ;
 		var oldRating;
