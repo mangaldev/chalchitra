@@ -1,0 +1,64 @@
+PUT http://localhost:9200/mbindex
+{
+   "mappings": {
+      "movies": {
+         "properties": {
+             "title": {
+                "type": "string",
+                "index": "analyzed"
+             },
+             "title_suggest": {
+                "type": "completion"
+             },
+             "language": {
+                "type": "string",
+                "index": "not_analyzed"
+             },
+             "releaseDate": {
+                 "type": "Date",
+                 "index": "not_analyzed"
+             }
+         }
+      }
+   }
+}
+
+PUT http://localhost:9200/mbindex/movies/2
+{
+    "title": "Kill Bill",
+    "title_suggest": "Kill Bill",
+    "language": "English",
+    "releaseDate": "2013-12-23"
+}
+
+PUT http://localhost:9200/mbindex/movies/1
+{
+    "title": "Kill Bill 3",
+    "title_suggest": "Kill Bill 3",
+    "language": "English",
+    "releaseDate": "2013-11-23"
+}
+
+PUT http://localhost:9200/mbindex/movies/3
+{
+    "title": "Godfather",
+    "title_suggest": "Godfather",
+    "language": "English",
+    "releaseDate": "2013-01-23"
+    
+}
+
+
+POST /mbindex/_suggest
+{
+    "movie-suggest": {
+        "text": "Kia",
+        "completion": {
+            "field": "title_suggest",
+            "fuzzy": {
+                "edit_distance": 2 
+            },
+    "size": 1
+        }
+    }
+}

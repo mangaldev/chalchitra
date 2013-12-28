@@ -34,3 +34,10 @@ footer p {
     font-size: 20px;
     line-height: 1;
 }
+
+.abc {
+background-image: url(/img/icons/favicon.ico);
+width:25px;
+height: 25px;
+}
+

@@ -1,41 +1,54 @@
 <nav class="navbar-inner" data-ng-controller="HeaderController" role="navigation">
-    <div class="navbar-header">
-        <a href="#" class="navbar-brand">Movie Beans</a>
+  <script type="text/ng-template" id="itemTpl.html">
+    <a tabindex="-1" href="../#!/movie/{{match.model._id}}">
+         <div class="media">
+          <img class="abc pull-left media-object"></img>
+          <div class="media-heading">
+              <span ng-bind-html-unsafe="match.model.title | typeaheadHighlight:query"></span>
+          </div>
+      </div>
+  </a>
+</script>
+
+<div class="navbar-header">
+    <a href="#" class="navbar-brand">Movie Beans</a>
+</div>
+<div class="collapse navbar-collapse" role="navigation">
+    <ul class="nav navbar-nav">
+        <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" >
+            <a href="#!/{{item.link}}">{{item.title}}</a>
+        </li>
+    </ul>
+    <div class="col-md-6 col-md-offset-1">
+        <form  class="navbar-form navbar-left" role="search" ng-submit="search(moviename)">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Enter Movie Name"  ng-model="moviename" typeahead="suggestion as suggestion for suggestion in movieSuggestion($viewValue)" 
+                typeahead-template-url="itemTpl.html"
+                typeahead-on-select="search(moviename)">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
     </div>
-    <div class="collapse navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav">
-            <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" >
-                <a href="#!/{{item.link}}">{{item.title}}</a>
-            </li>
-        </ul>
-        <div class="col-md-6 col-md-offset-1">
-            <form class="navbar-form navbar-left" role="search" ng-submit="search(moviename)">
-                <div class="input-group">
-                    <input type="search" ng-model="moviename" class="form-control" placeholder="Enter Movie Name" ></input>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <ul class="nav navbar-nav navbar-right" data-ng-hide="global.authenticated">
-            <li><a href="signup">Signup</a>
-            </li>
-            <li class="divider-vertical"></li>
-            <li><a href="signin">Signin</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" data-ng-show="global.authenticated">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {{global.user.name}} <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/signout">Signout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <ul class="nav navbar-nav navbar-right" data-ng-hide="global.authenticated">
+        <li><a href="signup">Signup</a>
+        </li>
+        <li class="divider-vertical"></li>
+        <li><a href="signin">Signin</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" data-ng-show="global.authenticated">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {{global.user.name}} <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="/signout">Signout</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
 </nav>
