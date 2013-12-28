@@ -3,9 +3,9 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 		$scope.global = Global;
 		$scope.moviename;
 
-		$scope.search = function(searchTerm) {
+		$scope.search = function(searchTerm) {		
 			console.log(searchTerm);
-			if(search.title)
+			if(searchTerm.title)
 				$scope.moviename = searchTerm.title;
 			else
 				$scope.moviename = searchTerm;

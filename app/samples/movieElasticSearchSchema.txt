@@ -74,3 +74,5 @@ POST /mbindex/_suggest
         }
     }
 }
+
+https://download.elasticsearch.org/elasticsearch/elasticsearch-js/elasticsearch-js-1.1.0.zip
