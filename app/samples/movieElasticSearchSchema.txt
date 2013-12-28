@@ -1,3 +1,7 @@
+DELETE http://localhost:9200/mbindex
+
+DELETE http://localhost:9200/mbindex1
+
 PUT http://localhost:9200/mbindex
 {
    "mappings": {
@@ -8,7 +12,8 @@ PUT http://localhost:9200/mbindex
                 "index": "analyzed"
              },
              "title_suggest": {
-                "type": "completion"
+                "type": "completion",
+                "payloads" : true
              },
              "language": {
                 "type": "string",
@@ -26,7 +31,10 @@ PUT http://localhost:9200/mbindex
 PUT http://localhost:9200/mbindex/movies/2
 {
     "title": "Kill Bill",
-    "title_suggest": "Kill Bill",
+    "title_suggest": {
+        "input": "Kill Bill ",
+        "payload":     { "_id": 2}
+    },
     "language": "English",
     "releaseDate": "2013-12-23"
 }
@@ -34,7 +42,10 @@ PUT http://localhost:9200/mbindex/movies/2
 PUT http://localhost:9200/mbindex/movies/1
 {
     "title": "Kill Bill 3",
-    "title_suggest": "Kill Bill 3",
+    "title_suggest": {
+        "input": "Kill Bill 3",
+        "payload":     { "_id": 1}
+    },
     "language": "English",
     "releaseDate": "2013-11-23"
 }
@@ -42,17 +53,18 @@ PUT http://localhost:9200/mbindex/movies/1
 PUT http://localhost:9200/mbindex/movies/3
 {
     "title": "Godfather",
-    "title_suggest": "Godfather",
+    "title_suggest": {
+        "input": "Godfather",
+        "payload":     { "_id": 3}
+    },
     "language": "English",
     "releaseDate": "2013-01-23"
-    
 }
-
 
 POST /mbindex/_suggest
 {
     "movie-suggest": {
-        "text": "Kia",
+        "text": "God",
         "completion": {
             "field": "title_suggest",
             "fuzzy": {

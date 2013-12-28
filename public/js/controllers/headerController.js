@@ -1,9 +1,23 @@
 angular.module('mean.system').controller('HeaderController', ['$scope', 'Global', '$location', 'es', '$http',
 	function($scope, Global, $location, es, $http) {
 		$scope.global = Global;
+		$scope.moviename;
 
 		$scope.search = function(searchTerm) {
-			window.location = '/#!/search/' + searchTerm;
+			console.log(searchTerm);
+			if(search.title)
+				$scope.moviename = searchTerm.title;
+			else
+				$scope.moviename = searchTerm;
+			window.location = '/#!/search/' + $scope.moviename;
+		};
+
+
+
+		$scope.goToMoviePage = function(searchTerm) {
+			console.log("Go to movie page "+searchTerm);
+			$scope.moviename = searchTerm.title;
+			window.location = '../#!/movie/'+searchTerm._id;
 		};
 
 		$scope.movieSuggestion = function(searchString) {
@@ -24,9 +38,9 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 			}).then(function(response) {
 				var movieSuggestions = [];
 				angular.forEach(response.movie_suggest[0].options, function(option) {
-					movieSuggestions.push({title: option.text, _id:'123'});
+					movieSuggestions.push({title: option.text, _id:option.payload._id});
 				});
-				console.log(movieSuggestions);
+				console.log("These are movie suggestions after elastic search "+movieSuggestions);
 				return movieSuggestions;
 			}, function(error) {
 				console.log("error --> " + error);
