@@ -20,6 +20,7 @@
     "dependencies": {
         "node-inspector": "latest",
         "express": "latest",
+        "elasticsearch":"latest",
         "jade": "latest",
         "mongoose": "latest",
         "mongoose-text-search": "latest",

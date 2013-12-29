@@ -22,7 +22,7 @@
     <div class="col-md-6 col-md-offset-1">
         <form  class="navbar-form navbar-left" role="search" ng-submit="search(moviename)">
             <div class="input-group">
-                <input type="search" class="form-control" placeholder="Enter Movie Name" ng-model="moviename" typeahead="suggestion as suggestion for suggestion in movieSuggestion($viewValue)" 
+                <input type="search" class="form-control" placeholder="Enter Movie Name" ng-model="moviename" typeahead="suggestion as suggestion for suggestion in suggestMovies($viewValue)" 
                 typeahead-template-url="itemTpl.html"
                 typeahead-on-select="goToMoviePage(moviename)">
                 <span class="input-group-btn">

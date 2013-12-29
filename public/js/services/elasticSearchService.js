@@ -1,6 +1,11 @@
-angular.module('mean.system').service('es', function (esFactory) {
-  return esFactory({
-    host: '54.201.156.156:9200',
-    // log: 'trace'
-  });
-});
+//Movie service used for articles REST endpoint
+angular.module('mean.search').factory("ElasticSearch", 
+	['$resource', function($resource) {
+	return $resource(
+				'suggest/:searchString', 
+				{searchString: '@_id'}, 
+			    {update: 
+			    	{method: 'GET'}
+			    }
+			);
+}]);

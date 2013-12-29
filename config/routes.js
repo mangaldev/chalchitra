@@ -71,7 +71,7 @@ module.exports = function(app, passport, auth) {
     var peoples = require('../app/controllers/peoples');
     var reviews = require('../app/controllers/reviews');
     var songs = require('../app/controllers/songs');
-
+    var elastic = require('../app/controllers/elasticsearch');
    
 
     app.get('/search/:searchString', movies.findMoviesByTextSearch,movies.show);
@@ -88,4 +88,7 @@ module.exports = function(app, passport, auth) {
     app.get('/people/:peopleId',peoples.findPeopleById, peoples.show);
 
     app.get('/song/:movieId',songs.findSongsByMovieId, songs.show);
+
+    app.post('/suggest', elastic.suggestMoviesBySearchString,elastic.show);
+    app.get('/suggest/:searchString', elastic.searchMoviesBySearchString,elastic.show);
 };
