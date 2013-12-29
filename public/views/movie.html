@@ -4,7 +4,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="col-lg-3" style="margin-top: 20px">
-                        <img src="../img/movies/2013/large/Dhoom_3_Film_Poster.jpg" alt="Dhoom 3" class="img-thumbnail">
+                        <img ng-src='{{"/img/movies/large/"+movie._id+".jpg"}}' alt="Dhoom 3" class="img-thumbnail">
                     </div>
                     <div class="col-lg-9">
                         <h2>{{movie.data.text}}</h2>

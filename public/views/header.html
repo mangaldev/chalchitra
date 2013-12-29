@@ -1,12 +1,12 @@
 <nav class="navbar-inner" data-ng-controller="HeaderController" role="navigation">
   <script type="text/ng-template" id="itemTpl.html">
-    <a tabindex="-1" href="../#!/movie/{{match.model._id}}">
-         <div class="media">
-          <img class="abc pull-left media-object"></img>
-          <div class="media-heading">
+    <a href="../#!/movie/{{match.model._id}}">
+         <!-- <div class="media"> -->
+          <img ng-src='{{"/img/movies/small/"+match.model._id+".jpg"}}' width="16"></img>
+          <!-- <div class="media-heading"> -->
               <span ng-bind-html-unsafe="match.model.title | typeaheadHighlight:query"></span>
-          </div>
-      </div>
+          <!-- </div> -->
+      <!-- </div> -->
   </a>
 </script>
 
@@ -24,6 +24,7 @@
             <div class="input-group">
                 <input type="search" class="form-control" placeholder="Enter Movie Name" ng-model="moviename" typeahead="suggestion as suggestion for suggestion in suggestMovies($viewValue)" 
                 typeahead-template-url="itemTpl.html"
+                typeahead-wait-ms="100"
                 typeahead-on-select="goToMoviePage(moviename)">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">
