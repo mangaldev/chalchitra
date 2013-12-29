@@ -2,7 +2,7 @@
   <script type="text/ng-template" id="itemTpl.html">
     <a href="../#!/movie/{{match.model._id}}">
          <!-- <div class="media"> -->
-          <img ng-src='{{"/img/movies/small/"+match.model._id+".jpg"}}' width="16"></img>
+          <img ng-src='{{"/img/movies/small/"+match.model._id+".jpg"}}' width="32"></img>
           <!-- <div class="media-heading"> -->
               <span ng-bind-html-unsafe="match.model.title | typeaheadHighlight:query"></span>
           <!-- </div> -->
