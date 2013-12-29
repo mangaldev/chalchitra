@@ -8,11 +8,7 @@
 
 
  var textSearchOptions = {
-    project: 'data.text'                // do not include the `created` property
-  // , filter: { likes: { $gt: 1000000 }} // casts queries based on schema
-  // , limit: 10
-  // , language: 'spanish'
-  // , lean: true
+    project: 'data.text'
 }
 /**
  * Find movie by id
@@ -22,11 +18,9 @@
     console.log("Searching movie by id "+id);
     Movie.load(id, function(err, movie) {
         if (err) { 
-            console.log("Error in finding by id");
             return next(err);
         }
             if (!movie) return next(new Error('Failed to load movie ' + id));
-            // console.log("Result returned from findMovieById === "+movie);
             req.movie = movie;
             next();
         });
@@ -39,16 +33,10 @@
     var id = req.params.movieId;
     
     var movie = new Movie(req.body);
-    console.log("------------------------------------------------------------")
-    console.log("Searching movie by id "+id + "------>"+movie);
-    console.log("------------------------------------------------------------")
     var movieId = movie._id;
     Movie.update({_id:movieId},{$set:{rating:movie.rating, totalUsersRated: movie.totalUsersRated}},{upsert:true},function (err, numberAffected, raw) {
       if (err) return handleError(err);
-      console.log('The number of updated documents was %d', numberAffected);
-      console.log('The raw response from Mongo was ', raw);
     });
-    console.log("Updating new userRating"+ movie);
     req.movie = movie;
     next();
 };

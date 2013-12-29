@@ -15,14 +15,11 @@ var textSearchOptions = {
  */
 exports.findPeopleById = function(req, res, next) {
     var id = req.params.peopleId;
-    console.log("Searching people by id "+id);
     People.load(id, function(err, people) {
         if (err) { 
-            console.log("Error in finding by id");
             return next(err);
         }
             if (!people) return next(new Error('Failed to load people ' + id));
-            console.log("Result returned from findPeopleById === " + people);
             req.people = people;
             next();
         });
@@ -33,7 +30,6 @@ exports.findPeopleById = function(req, res, next) {
  */ 
 exports.findPeoplesByTextSearch = function(req, res,next) {
     var id = req.params.peopleId;
-    console.log("In exports.people...Got id : "+id);
     People.textSearch(id,textSearchOptions,function(err, peoples) {
         if (err) {
             res.render('error', {
@@ -55,14 +51,12 @@ exports.findPeoplesByTextSearch = function(req, res,next) {
  * List of Peoples
  */
 exports.all = function(req, res) {
-    console.log("Executing find command");
     People.find().exec(function(err, peoples) {
         if (err) {
             res.render('error', {
                 status: 500
             });
         } else {
-            console.log("Returning jsonp of peoples");
             res.jsonp(peoples);
         }
     });
@@ -72,7 +66,6 @@ exports.all = function(req, res) {
  * Show a people
  */
 exports.show = function(req, res) {
-    console.log("Executing show command"+ req.people);
     res.jsonp(req.people);
 };
 

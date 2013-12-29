@@ -10,26 +10,19 @@ angular.module('mean.search')
 		var movieId =  $routeParams.movieId ;
 		var oldRating;
 
-		console.log("Got the movie id to show "+movieId);
-
-
 		$scope.findMovieById = function(){
 			Movie.get({movieId:movieId},function(results) {
-				console.log("Got result back after querying : "+results);
 				$scope.movie = results;
 			});
 
 			if (Global.authenticated) 
 			{
-				console.log("User "+user.username+ " got authenticated");
 				Rating.get({userName:user.username,movieId:movieId},function(results) {
-					console.log("Got Rating for user : "+results);
 					$scope.userRating  = results;
 					if(results)
 						oldRating = results.rating;
 				});
 				Review.get({userName:user.username,movieId:movieId},function(results) {
-					console.log("Got Review for user : "+results);
 					$scope.userReview =  results;
 					if(results.text)  $scope.isUserReviewPresent = true;
 				});
@@ -38,12 +31,10 @@ angular.module('mean.search')
 				
 			}
 			Review.query({movieId:movieId},function(results) {
-				console.log("Got Movie Reviews for movie  : "+movieId + " === "+results);
 				$scope.movieReviews =  results;
 			});
 
 			Song.query({movieId:movieId},function(results) {
-				console.log("Got Songs for user : "+results);
 				$scope.movie.songs =  results;
 			});
 		}
@@ -63,11 +54,10 @@ angular.module('mean.search')
 							$scope.movie.totalUsersRated = 1;
 						$scope.movie.rating = $scope.movie.rating + $scope.userRating.rating;				
 					}
-					console.log("Updating rating for user "+ user.username +" from "+oldRating+" to "+$scope.userRating.rating);
+
 					oldRating = $scope.userRating.rating;
 					$scope.userRating.userName = user.username;
-					$scope.userRating.movieId = movieId;
-					console.log("Saving Rating ->" + $scope.userRating);
+					$scope.userRating.movieId = movieId;					
 					$scope.userRating.$save();
 					$scope.movie.$save();
 				}
@@ -90,7 +80,6 @@ angular.module('mean.search')
 		$scope.submitReview = function(){
 			if (Global.authenticated) 
 			{
-				console.log("Adding new Review for user "+user.username+" with review text -> "+ $scope.userReview.text);
 				$scope.userReview.userName = user.username;
 				$scope.userReview.movieId = movieId;
 				$scope.userReview.score = 0;

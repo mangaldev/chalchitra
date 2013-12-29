@@ -1,7 +1,6 @@
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-	host: '54.201.156.156:9200',
-	// host: 'localhost:9200',
+	host: 'localhost:9200',
 	log: 'trace'
 });
 
@@ -22,11 +21,10 @@ client.ping({
 
 
 /**
- * Find movies by using Text Search
+ * Suggest movies by using Text Search
  */ 
  exports.suggestMoviesBySearchString = function(req, res,next) {
  	var searchString = req.body.searchString;
- 	console.log("In exports.suggestMoviesBySearchString...Got searchString : "+searchString);
  	client.suggest({
  		index: 'mbindex',
  		body: {
@@ -54,7 +52,6 @@ client.ping({
  */ 
  exports.searchMoviesBySearchString = function(req, res,next) {
  	var searchString = req.params.searchString;
- 	console.log("In exports.searchMoviesBySearchString...Got searchString : "+searchString);
  	var exprMovieSearch = "*" + searchString + "*";
  	client.search({
  		index: 'mbindex',
@@ -88,7 +85,6 @@ client.ping({
  			}
  		}
  	}).then(function (response) {
- 		console.log(response);
  		req.results = response;
  		next();
  	}, function (error) {
@@ -99,7 +95,6 @@ client.ping({
 
 
  	exports.show = function(req, res) {
- 		console.log("Executing show command for Suggestion Controller");
  		res.jsonp(req.results);
  	};
 
