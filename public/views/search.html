@@ -21,12 +21,12 @@
                 <span class="search-title">{{searchString}}</span> 
             </h4>
         </div>
-    </div>
+    </div>  
     <div class="row" >
         <div class="col-sm-6 col-md-2" ng-repeat="movie in movies">
             <a href="../#!/movie/{{movie._id}}">
                 <div class="thumbnail">
-                    <img src="/img/movies/2013/large/Dhoom_3_Film_Poster.jpg" width="214" height="317" alt="..."></img>
+                    <img src="{{movie.image}}" width="214" height="317" alt="..."></img>
                     <div class="caption">
                         <h4>{{movie.title}}</h4>
                     </div>

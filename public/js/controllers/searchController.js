@@ -8,6 +8,7 @@ angular.module('mean.search')
 		ElasticSearch.query({searchString:$scope.searchString},function(response) {
 			for(var i=0;i< response[0].hits.hits.length;i++){
 				var movie = response[0].hits.hits[i]._source;
+				movie.image = "/img/movies/large/"+movie._id+".jpg";
 				$scope.movies.push(movie);
 			}
 		});
