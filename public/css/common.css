@@ -50,3 +50,10 @@ color: rgb(107, 13, 228);
 font-weight: 500;
 font-size: 19px;
 }
+
+.search-thumbnail {
+display: block;
+max-width: 100%;
+margin-right: auto;
+margin-left: auto;
+}

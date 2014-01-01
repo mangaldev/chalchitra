@@ -10,7 +10,6 @@
                     </tr>
                 </tbody>
             </table>
-
         </div>
     </div-->
     <div class="row">
@@ -25,8 +24,8 @@
     <div class="row" >
         <div class="col-sm-6 col-md-2" ng-repeat="movie in movies">
             <a href="../#!/movie/{{movie._id}}">
-                <div class="thumbnail">
-                    <img src="{{movie.image}}" width="214" height="317" alt="..."></img>
+                <div class="search-thumbnail">
+                    <img src="{{movie.image}}" width="220" height="250" alt="{{movie.title}}"></img>
                     <div class="caption">
                         <h4>{{movie.title}}</h4>
                     </div>
