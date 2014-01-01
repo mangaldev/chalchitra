@@ -1,5 +1,5 @@
 <section data-ng-controller="SearchController">
-    <div class="row">
+    <!--div class="row">
         <div class="col-lg-6">
             <h2><small>Results for </small>"{{searchString}}"</h2>
             <h4>Movies</h4>
@@ -10,6 +10,30 @@
                     </tr>
                 </tbody>
             </table>
+
+        </div>
+    </div-->
+    <div class="row">
+        <div class="well well-sm">
+            <h4 class="section-title">
+                <strong>Movies</strong> »
+                <span class="search-title"> {{movies.length}}</span> matches for
+                <span class="search-title">{{searchString}}</span> 
+            </h4>
         </div>
     </div>
+    <div class="row" >
+        <div class="col-sm-6 col-md-2" ng-repeat="movie in movies">
+            <a href="../#!/movie/{{movie._id}}">
+                <div class="thumbnail">
+                    <img src="/img/movies/2013/large/Dhoom_3_Film_Poster.jpg" width="214" height="317" alt="..."></img>
+                    <div class="caption">
+                        <h4>{{movie.title}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
 </section>

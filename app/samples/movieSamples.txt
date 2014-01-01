@@ -1,6 +1,34 @@
 db.movies.drop();
 
 db.movies.insert({
+        "_id" : ObjectId("52b6ecb6e4b019f1afa4547c"),
+        "data" : {
+                "text" : "Dabangg 3",
+                "id" : "/m/0t_ch0b",
+                "type" : "FREEBASE"
+        },
+        "actors" : [ ],
+        "directors" : [
+                {
+                        "text" : "Arbaaz Khan",
+                        "id" : "/m/05wd82",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "producers" : [ ],
+        "musicDirectors" : [ ],
+        "writers" : [ ],
+        "editors" : [ ],
+        "genres" : [ ],
+        "releaseDate" : "Aug 24, 2014 12:00:00 AM",
+        "language" : [ ],
+        "country" : [ ],
+        "rating" : 0,
+        "totalUsersRated" : 0
+})
+
+
+db.movies.insert({
         "_id" : ObjectId("52b6ed99e4b033a261468c29"),
         "data" : {
                 "text" : "Cars 2",
@@ -189,6 +217,373 @@ db.movies.insert({
         "rating" : 0,
         "totalUsersRated" : 0
 })
+
+
+db.movies.insert({
+        "_id" : ObjectId("52b716f8e4b00e170053d172"),
+        "data" : {
+                "text" : "Death Race",
+                "id" : "/m/03b_h1l",
+                "type" : "FREEBASE"
+        },
+        "actors" : [
+                {
+                        "people" : {
+                                "text" : "Tyrese Gibson",
+                                "id" : "/m/01l1b90",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Machine Gun Joe Viterbo"
+                },
+                {
+                        "people" : {
+                                "text" : "Joan Allen",
+                                "id" : "/m/02jsgf",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Hennessey"
+                },
+                {
+                        "people" : {
+                                "text" : "Ian McShane",
+                                "id" : "/m/02zfdp",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Coach"
+                },
+                {
+                        "people" : {
+                                "text" : "Jason Statham",
+                                "id" : "/m/034hyc",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Jensen Ames"
+                },
+                {
+                        "people" : {
+                                "text" : "Natalie Martinez",
+                                "id" : "/m/0275vw3",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Case"
+                },
+                {
+                        "people" : {
+                                "text" : "Robert LaSardo",
+                                "id" : "/m/09nsph",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Grimm"
+                },
+                {
+                        "people" : {
+                                "text" : "Max Ryan",
+                                "id" : "/m/0jysnt",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Pachenko"
+                },
+                {
+                        "people" : {
+                                "text" : "Jacob Vargas",
+                                "id" : "/m/07h565",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Gunner"
+                },
+                {
+                        "people" : {
+                                "text" : "Robin Shou",
+                                "id" : "/m/07y1q4",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "14K"
+                },
+                {
+                        "people" : {
+                                "text" : "Jason Clarke",
+                                "id" : "/m/0cbz_h",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Ulrich"
+                }
+        ],
+        "directors" : [
+                {
+                        "text" : "Paul W. S. Anderson",
+                        "id" : "/m/03s9k8",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "producers" : [
+                {
+                        "text" : "Jeremy Bolt",
+                        "id" : "/m/0fgsll",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Paula Wagner",
+                        "id" : "/m/0fxdnk",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Paul W. S. Anderson",
+                        "id" : "/m/03s9k8",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "musicDirectors" : [
+                {
+                        "text" : "Paul Haslinger",
+                        "id" : "/m/01lhc46",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "writers" : [
+                {
+                        "text" : "Paul W. S. Anderson",
+                        "id" : "/m/03s9k8",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "editors" : [
+                {
+                        "text" : "Niven Howie",
+                        "id" : "/m/0k7d8p",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "genres" : [
+                {
+                        "text" : "Thriller",
+                        "id" : "/m/01jfsb",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Action Film",
+                        "id" : "/m/02kdv5l",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Sports",
+                        "id" : "/m/01z02hx",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Science Fiction",
+                        "id" : "/m/06n90",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Crime Fiction",
+                        "id" : "/m/0lsxr",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Race film",
+                        "id" : "/m/0bxdv5",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "releaseDate" : "Aug 21, 2008 12:00:00 AM",
+        "language" : [
+                {
+                        "text" : "English Language",
+                        "id" : "/m/02h40lc",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "country" : [
+                {
+                        "text" : "United States of America",
+                        "id" : "/m/09c7w0",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "United Kingdom",
+                        "id" : "/m/07ssc",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Germany",
+                        "id" : "/m/0345h",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "rating" : 0,
+        "totalUsersRated" : 0
+})
+
+db.movies.insert({
+        "_id" : ObjectId("52b716f8e4b00e170053d173"),
+        "data" : {
+                "text" : "Rat Race",
+                "id" : "/m/031_m3",
+                "type" : "FREEBASE"
+        },
+        "actors" : [
+                {
+                        "people" : {
+                                "text" : "Breckin Meyer",
+                                "id" : "/m/03nb5v",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Nick Schaffer"
+                },
+                {
+                        "people" : {
+                                "text" : "Cuba Gooding, Jr.",
+                                "id" : "/m/014v6f",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Owen Templeton"
+                },
+                {
+                        "people" : {
+                                "text" : "Seth Green",
+                                "id" : "/m/0gz5hs",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Duane Cody"
+                },
+                {
+                        "people" : {
+                                "text" : "Vince Vieluf",
+                                "id" : "/m/09d9q3",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Blaine Cody"
+                },
+                {
+                        "people" : {
+                                "text" : "Whoopi Goldberg",
+                                "id" : "/m/0fb1q",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Vera Baker"
+                },
+                {
+                        "people" : {
+                                "text" : "Lanei Chapman",
+                                "id" : "/m/0g8xgf",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Merrill Jennings"
+                },
+                {
+                        "people" : {
+                                "text" : "Jillian Marie Hubert",
+                                "id" : "/m/0k2bp_",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Kimberly Pear"
+                },
+                {
+                        "people" : {
+                                "text" : "Brody Smith",
+                                "id" : "/m/0k2bpm",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Jason Pear"
+                },
+                {
+                        "people" : {
+                                "text" : "Jon Lovitz",
+                                "id" : "/m/02jm0n",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Randy Pear"
+                },
+                {
+                        "people" : {
+                                "text" : "Kathy Najimy",
+                                "id" : "/m/02b6xq",
+                                "type" : "FREEBASE"
+                        },
+                        "role" : "Beverly Pear"
+                }
+        ],
+        "directors" : [
+                {
+                        "text" : "Jerry Zucker",
+                        "id" : "/m/0362qw",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "producers" : [
+                {
+                        "text" : "Sean Daniel",
+                        "id" : "/m/02q58s9",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Janet Zucker",
+                        "id" : "/m/0cgsxrj",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Jerry Zucker",
+                        "id" : "/m/0362qw",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "musicDirectors" : [
+                {
+                        "text" : "John Powell",
+                        "id" : "/m/06fxnf",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "writers" : [
+                {
+                        "text" : "Andy Breckman",
+                        "id" : "/m/01nb19j",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "editors" : [
+                {
+                        "text" : "Tom Lewis",
+                        "id" : "/m/0bf183j",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "genres" : [
+                {
+                        "text" : "Adventure Film",
+                        "id" : "/m/03k9fj",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "Comedy",
+                        "id" : "/m/05p553",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "releaseDate" : "Jul 30, 2001 12:00:00 AM",
+        "language" : [
+                {
+                        "text" : "English Language",
+                        "id" : "/m/02h40lc",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "country" : [
+                {
+                        "text" : "Canada",
+                        "id" : "/m/0d060g",
+                        "type" : "FREEBASE"
+                },
+                {
+                        "text" : "United States of America",
+                        "id" : "/m/09c7w0",
+                        "type" : "FREEBASE"
+                }
+        ],
+        "rating" : 0,
+        "totalUsersRated" : 0
+})
+
 
 
 db.movies.ensureIndex( { "data.text": "text" } )

@@ -35,9 +35,18 @@ footer p {
     line-height: 1;
 }
 
-.abc {
-background-image: url(/img/icons/favicon.ico);
-width:25px;
-height: 25px;
+
+
+.section-title {
+font-family: 'Lato','Droid Sans',sans-serif;
+font-weight: 200;
+font-size: 15px;
+line-height: 12px;
+color: #000;
 }
 
+.search-title {
+color: rgb(107, 13, 228);
+font-weight: 500;
+font-size: 19px;
+}
