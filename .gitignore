@@ -3,5 +3,6 @@
 .sass-cache/
 node_modules/
 public/lib
+public/img/movies/large
 test/coverage/
 config/env/development.js
